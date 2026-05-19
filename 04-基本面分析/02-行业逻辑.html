@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第13课：行业逻辑 - 炒股实战教材</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.9;padding:20px}
+.container{max-width:800px;margin:0 auto}
+nav{margin-bottom:30px;display:flex;gap:10px;flex-wrap:wrap}
+nav a{color:#58a6ff;text-decoration:none;padding:6px 14px;border:1px solid #30363d;border-radius:6px;font-size:.9em;transition:all .2s}
+nav a:hover{background:#1f6feb33;border-color:#58a6ff}
+h1{font-size:1.8em;margin-bottom:6px;color:#58a6ff}
+.desc{color:#8b949e;margin-bottom:30px}
+h2{font-size:1.4em;margin:30px 0 12px;color:#f78166;border-left:4px solid #f78166;padding-left:12px}
+p{margin-bottom:12px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px 24px;margin:16px 0}
+.card-title{font-weight:bold;color:#58a6ff;margin-bottom:8px;font-size:1.05em}
+.highlight{background:#1f6feb22;border-left:3px solid #58a6ff;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.danger{background:#f8514922;border-left:3px solid #f85149;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.success{background:#3fb95022;border-left:3px solid #3fb950;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95em}
+th{background:#1f6feb33;color:#58a6ff;padding:10px 14px;text-align:left;border-bottom:2px solid #30363d}
+td{padding:10px 14px;border-bottom:1px solid #21262d}
+.quiz{background:#161b22;border:2px solid #f78166;border-radius:10px;padding:20px 24px;margin:20px 0}
+.quiz h3{color:#f78166;border:none;padding:0;margin-top:0}
+.quiz p{margin:8px 0;padding-left:20px}
+.summary{background:#1f6feb11;border:1px solid #1f6feb44;border-radius:10px;padding:20px 24px;margin:20px 0}
+.summary li{margin:6px 0}
+.svg-container{text-align:center;margin:16px 0;background:#161b22;border-radius:10px;padding:20px;border:1px solid #30363d}
+.red{color:#f85149}.green{color:#3fb950}.blue{color:#58a6ff}.yellow{color:#d29922}
+</style>
+</head>
+<body>
+<div class="container">
+
+<nav>
+  <a href="01-财务指标.html">← 上一课</a>
+  <a href="../index.html">🏠 目录</a>
+  <a href="03-消息面解读.html">下一课 →</a>
+</nav>
+
+<h1>🏭 第13课：行业逻辑</h1>
+<p class="desc">做天邦食品，你得懂猪周期。不同行业有不同的"脾气"，周期股和成长股玩法完全不同。这课帮你搞懂行业底层逻辑。</p>
+
+<h2>一、猪周期——天邦的核心逻辑</h2>
+
+<div class="svg-container">
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="280" fill="#0d1117" rx="8"/>
+  <text x="350" y="25" fill="#d29922" text-anchor="middle" font-size="16" font-weight="bold">猪周期（约3-4年一个轮回）</text>
+
+  <!-- 坐标轴 -->
+  <line x1="80" y1="230" x2="650" y2="230" stroke="#30363d" stroke-width="1"/>
+  <line x1="80" y1="50" x2="80" y2="230" stroke="#30363d" stroke-width="1"/>
+  <text x="40" y="140" fill="#8b949e" font-size="11" transform="rotate(-90,40,140)">猪价</text>
+  <text x="365" y="260" fill="#8b949e" font-size="11">时间</text>
+
+  <!-- 猪价曲线 -->
+  <path d="M100,200 Q180,180 220,150 Q260,100 300,70 Q340,55 370,60 Q410,75 450,120 Q490,170 530,200 Q570,220 610,225 Q630,225 650,220" stroke="#f78166" stroke-width="3" fill="none"/>
+  <text x="650" y="215" fill="#f78166" font-size="10">猪价</text>
+
+  <!-- 阶段标注 -->
+  <!-- 去产能 -->
+  <rect x="80" y="35" width="180" height="25" rx="4" fill="#3fb95033"/>
+  <text x="170" y="52" fill="#3fb950" text-anchor="middle" font-size="11">🔄 去产能期（亏损→减产）</text>
+
+  <!-- 涨价 -->
+  <rect x="260" y="35" width="150" height="25" rx="4" fill="#f8514933"/>
+  <text x="335" y="52" fill="#f85149" text-anchor="middle" font-size="11">📈 涨价期（供<求→猪价涨）</text>
+
+  <!-- 扩产 -->
+  <rect x="410" y="35" width="130" height="25" rx="4" fill="#58a6ff33"/>
+  <text x="475" y="52" fill="#58a6ff" text-anchor="middle" font-size="11">📊 扩产期（赚钱→养猪多）</text>
+
+  <!-- 跌价 -->
+  <rect x="540" y="35" width="120" height="25" rx="4" fill="#3fb95066"/>
+  <text x="600" y="52" fill="#3fb950" text-anchor="middle" font-size="11">📉 跌价期（供>求→猪价跌）</text>
+
+  <!-- 天邦位置 -->
+  <circle cx="530" cy="200" r="10" fill="none" stroke="#d29922" stroke-width="2"/>
+  <text x="530" y="195" fill="#d29922" font-size="9" text-anchor="middle">天邦</text>
+  <text x="530" y="185" fill="#d29922" font-size="10" text-anchor="middle" font-weight="bold">你现在在这</text>
+  <text x="530" y="248" fill="#d29922" text-anchor="middle" font-size="10">猪价低位 → 等待反转</text>
+
+  <!-- 利润线 -->
+  <line x1="80" y1="140" x2="650" y2="140" stroke="#8b949e" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="70" y="143" fill="#8b949e" font-size="9">盈亏线</text>
+</svg>
+</div>
+
+<div class="card">
+  <div class="card-title">🐷 猪周期4阶段（大白话）</div>
+  <p><strong>1. 去产能期：</strong>猪价太低，养猪亏钱，养户退出 → 猪越来越少</p>
+  <p><strong>2. 涨价期：</strong>猪少了但需求没变，供不应求 → 猪价大涨</p>
+  <p><strong>3. 扩产期：</strong>养猪赚钱了，大家蜂拥而入 → 猪越来越多</p>
+  <p><strong>4. 跌价期：</strong>猪太多了供过于求 → 猪价大跌 → 回到第1步</p>
+</div>
+
+<div class="highlight">
+  💡 <strong>天邦食品目前处于猪周期底部区域。</strong>  
+  猪价低迷，公司亏损，但预重整如果能成功，等猪周期反转就是大机会。  
+  做T策略：先降成本保命，等猪价反转再加仓赚大钱。  
+  <small style="color:#8b949e">（数据截至2026年5月18日）</small>
+</div>
+
+<h2>二、周期股 vs 成长股</h2>
+
+<table>
+  <tr><th>对比项</th><th>周期股（如猪肉、钢铁）</th><th>成长股（如科技、医药）</th></tr>
+  <tr><td>利润特征</td><td>时赚时亏，波动大</td><td>持续增长</td></tr>
+  <tr><td>PE解读</td><td class="red">PE低反而该卖（盈利见顶）</td><td class="green">PE低是买入机会</td></tr>
+  <tr><td>最佳买点</td><td>行业最惨时（亏损期）</td><td>增速加快时</td></tr>
+  <tr><td>最佳卖点</td><td>行业最景气时（暴利期）</td><td>增速放缓时</td></tr>
+  <tr><td>做T特点</td><td>波动大，做T空间大</td><td>波动小，做T空间小</td></tr>
+  <tr><td>风险</td><td>周期反转可能很慢</td><td>估值泡沫</td></tr>
+</table>
+
+<div class="danger">
+  ⚠️ <strong>周期股做T的陷阱：</strong>PE最低的时候反而是卖出时机！因为利润最高意味着行业见顶，接下来就要走下坡路了。反过来，PE为负（亏损）时反而可能是买入时机，只要公司不会破产。
+</div>
+
+<h2>三、板块轮动</h2>
+<p>A股资金像水一样在不同板块间流动，了解轮动规律能帮你选对做T标的：</p>
+
+<div class="card">
+  <div class="card-title">🔄 常见轮动顺序</div>
+  <p>经济复苏期：金融地产 → 周期资源（含猪） → 消费 → 科技成长</p>
+  <p>经济衰退期：科技成长 → 消费防御 → 债券现金</p>
+  <p>天邦属于周期资源板块，经济复苏时表现好</p>
+</div>
+
+<div class="summary">
+  <h3 style="color:#58a6ff;border:none;padding:0;margin:0 0 8px 0">📝 本课要点</h3>
+  <ul>
+    <li>猪周期约3-4年一轮：去产能→涨价→扩产→跌价</li>
+    <li>天邦处于猪周期底部，猪价低迷，等反转</li>
+    <li>周期股PE低反而该卖，PE为负（亏损期）反而可能是买点</li>
+    <li>周期股波动大，做T空间大，但周期反转可能很慢</li>
+    <li>板块轮动：经济复苏期周期股受益，衰退期科技防御</li>
+  </ul>
+</div>
+
+<div class="quiz">
+  <h3>✏️ 练习题</h3>
+  <p>1. 天邦食品处于猪周期哪个阶段？这对做T意味着什么？</p>
+  <p>2. 为什么周期股PE最低的时候反而要卖出？</p>
+  <p>3. 如果猪价开始回升，天邦食品应该加仓还是减仓？</p>
+  <p>4. 周期股和成长股，哪个更适合做T？为什么？</p>
+</div>
+
+<nav style="margin-top:30px">
+  <a href="01-财务指标.html">← 上一课</a>
+  <a href="../index.html">🏠 目录</a>
+  <a href="03-消息面解读.html">下一课 →</a>
+</nav>
+
+</div>
+</body>
+</html>

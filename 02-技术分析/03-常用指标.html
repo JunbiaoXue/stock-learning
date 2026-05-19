@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第6课：常用指标 - 炒股实战教材</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.9;padding:20px}
+.container{max-width:800px;margin:0 auto}
+nav{margin-bottom:30px;display:flex;gap:10px;flex-wrap:wrap}
+nav a{color:#58a6ff;text-decoration:none;padding:6px 14px;border:1px solid #30363d;border-radius:6px;font-size:.9em;transition:all .2s}
+nav a:hover{background:#1f6feb33;border-color:#58a6ff}
+h1{font-size:1.8em;margin-bottom:6px;color:#58a6ff}
+.desc{color:#8b949e;margin-bottom:30px}
+h2{font-size:1.4em;margin:30px 0 12px;color:#f78166;border-left:4px solid #f78166;padding-left:12px}
+p{margin-bottom:12px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px 24px;margin:16px 0}
+.card-title{font-weight:bold;color:#58a6ff;margin-bottom:8px;font-size:1.05em}
+.highlight{background:#1f6feb22;border-left:3px solid #58a6ff;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.danger{background:#f8514922;border-left:3px solid #f85149;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.success{background:#3fb95022;border-left:3px solid #3fb950;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95em}
+th{background:#1f6feb33;color:#58a6ff;padding:10px 14px;text-align:left;border-bottom:2px solid #30363d}
+td{padding:10px 14px;border-bottom:1px solid #21262d}
+.quiz{background:#161b22;border:2px solid #f78166;border-radius:10px;padding:20px 24px;margin:20px 0}
+.quiz h3{color:#f78166;border:none;padding:0;margin-top:0}
+.quiz p{margin:8px 0;padding-left:20px}
+.summary{background:#1f6feb11;border:1px solid #1f6feb44;border-radius:10px;padding:20px 24px;margin:20px 0}
+.summary li{margin:6px 0}
+.svg-container{text-align:center;margin:16px 0;background:#161b22;border-radius:10px;padding:20px;border:1px solid #30363d}
+.red{color:#f85149}.green{color:#3fb950}.blue{color:#58a6ff}.yellow{color:#d29922}
+</style>
+</head>
+<body>
+<div class="container">
+
+<nav>
+  <a href="02-均线系统.html">← 上一课</a>
+  <a href="../index.html">🏠 目录</a>
+  <a href="04-量价关系.html">下一课 →</a>
+</nav>
+
+<h1>📉 第6课：常用指标</h1>
+<p class="desc">MACD、KDJ、RSI、布林带——四大技术指标，帮你判断买卖时机。每个指标都有自己的"脾气"，用好一个比乱用四个强。</p>
+
+<h2>一、MACD（趋势之王）</h2>
+<p>MACD是最常用的趋势指标，判断"大方向"用的。</p>
+
+<div class="svg-container">
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="320" fill="#0d1117" rx="8"/>
+  <text x="350" y="25" fill="#d29922" text-anchor="middle" font-size="16" font-weight="bold">MACD 三要素</text>
+
+  <!-- DIF线 -->
+  <rect x="40" y="45" width="620" height="75" rx="8" fill="#58a6ff11" stroke="#58a6ff" stroke-width="1"/>
+  <text x="80" y="72" fill="#58a6ff" font-size="14" font-weight="bold">DIF线（快线）</text>
+  <text x="80" y="95" fill="#8b949e" font-size="12">短期均线和长期均线的差值，反应快</text>
+  <text x="450" y="72" fill="#58a6ff" font-size="12">白色线</text>
+  <path d="M400,85 Q420,80 440,82 Q460,78 480,83" stroke="#58a6ff" stroke-width="2" fill="none"/>
+
+  <!-- DEA线 -->
+  <rect x="40" y="130" width="620" height="75" rx="8" fill="#f7816611" stroke="#f78166" stroke-width="1"/>
+  <text x="80" y="157" fill="#f78166" font-size="14" font-weight="bold">DEA线（慢线）</text>
+  <text x="80" y="180" fill="#8b949e" font-size="12">DIF的平均值，反应慢，更平滑</text>
+  <text x="450" y="157" fill="#f78166" font-size="12">黄色线</text>
+  <path d="M400,170 Q420,168 440,170 Q460,167 480,170" stroke="#f78166" stroke-width="2" fill="none"/>
+
+  <!-- 柱状体 -->
+  <rect x="40" y="215" width="620" height="95" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="80" y="242" fill="#e6edf3" font-size="14" font-weight="bold">MACD柱状体</text>
+  <text x="80" y="265" fill="#8b949e" font-size="12">2×(DIF-DEA)（部分软件为DIF-DEA），红柱看涨，绿柱看跌</text>
+  <!-- 红柱 -->
+  <rect x="350" y="270" width="12" height="25" rx="2" fill="#f85149"/>
+  <rect x="365" y="275" width="12" height="20" rx="2" fill="#f85149"/>
+  <rect x="380" y="278" width="12" height="17" rx="2" fill="#f85149"/>
+  <rect x="395" y="280" width="12" height="15" rx="2" fill="#f85149"/>
+  <!-- 绿柱 -->
+  <rect x="415" y="295" width="12" height="10" rx="2" fill="#3fb950"/>
+  <rect x="430" y="295" width="12" height="18" rx="2" fill="#3fb950"/>
+  <rect x="445" y="295" width="12" height="22" rx="2" fill="#3fb950"/>
+  <text x="375" y="305" fill="#f85149" font-size="9">红柱=涨势</text>
+  <text x="440" y="305" fill="#3fb950" font-size="9">绿柱=跌势</text>
+</svg>
+</div>
+
+<div class="card">
+  <div class="card-title">🔑 MACD用法（简化版）</div>
+  <p><strong class="green">金叉看涨：</strong>DIF从下往上穿过DEA → 买入信号</p>
+  <p><strong class="red">死叉看跌：</strong>DIF从上往下穿过DEA → 卖出信号</p>
+  <p><strong class="green">红柱变长：</strong>涨势加强，继续持有</p>
+  <p><strong class="red">红柱变短：</strong>涨势减弱，注意可能回调</p>
+  <p><strong class="red">绿柱变长：</strong>跌势加强，不要抄底</p>
+  <p><strong class="green">绿柱变短：</strong>跌势减弱，可能见底</p>
+</div>
+
+<div class="highlight">
+  💡 <strong>做T用法：</strong>MACD绿柱开始变短时低吸，红柱开始变短时高抛。不用等完全金叉/死叉，柱子方向变化就是信号。
+</div>
+
+<h2>二、KDJ（超买超卖指标）</h2>
+<p>KDJ判断"涨过头了还是跌过头了"，适合找短线买卖点。</p>
+
+<div class="svg-container">
+<svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="250" fill="#0d1117" rx="8"/>
+  <text x="350" y="25" fill="#d29922" text-anchor="middle" font-size="16" font-weight="bold">KDJ 区域图</text>
+
+  <!-- Y轴 -->
+  <text x="40" y="60" fill="#8b949e" font-size="11">100</text>
+  <text x="40" y="110" fill="#8b949e" font-size="11">80</text>
+  <text x="40" y="160" fill="#8b949e" font-size="11">50</text>
+  <text x="40" y="210" fill="#8b949e" font-size="11">20</text>
+  <text x="40" y="235" fill="#8b949e" font-size="11">0</text>
+
+  <!-- 超买区 -->
+  <rect x="70" y="50" width="600" height="60" rx="0" fill="#f8514922"/>
+  <line x1="70" y1="110" x2="670" y2="110" stroke="#f85149" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="660" y="100" fill="#f85149" font-size="12">超买区 (>80)</text>
+  <text x="660" y="80" fill="#f85149" font-size="11">⚠️ 涨过头，注意回调</text>
+
+  <!-- 正常区 -->
+  <rect x="70" y="110" width="600" height="100" fill="transparent"/>
+  <line x1="70" y1="160" x2="670" y2="160" stroke="#8b949e" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="660" y="155" fill="#8b949e" font-size="11">50 中线</text>
+
+  <!-- 超卖区 -->
+  <rect x="70" y="210" width="600" height="25" rx="0" fill="#3fb95022"/>
+  <line x1="70" y1="210" x2="670" y2="210" stroke="#3fb950" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="660" y="225" fill="#3fb950" font-size="12">超卖区 (<20)</text>
+  <text x="660" y="240" fill="#3fb950" font-size="11">✅ 跌过头，可能反弹</text>
+
+  <!-- KDJ曲线模拟 -->
+  <path d="M100,200 Q150,190 200,160 Q250,120 280,90 Q300,75 320,80 Q350,100 380,130 Q410,160 430,200 Q450,225 470,230 Q490,220 520,180 Q550,130 570,95 Q590,80 610,85 Q630,100 650,120" stroke="#58a6ff" stroke-width="2" fill="none"/>
+  <path d="M100,210 Q150,200 200,170 Q250,140 280,105 Q300,85 320,90 Q350,115 380,145 Q410,175 430,210 Q450,235 470,235 Q490,230 520,195 Q550,150 570,110 Q590,95 610,100 Q630,115 650,135" stroke="#f78166" stroke-width="2" fill="none" stroke-dasharray="4,2"/>
+  <text x="90" y="195" fill="#58a6ff" font-size="10">K线</text>
+  <text x="90" y="215" fill="#f78166" font-size="10">D线</text>
+</svg>
+</div>
+
+<div class="card">
+  <div class="card-title">🔑 KDJ用法</div>
+  <p><strong class="green">K线上穿D线 + 在超卖区（<20）</strong> → 买入信号，可能反弹</p>
+  <p><strong class="red">K线下穿D线 + 在超买区（>80）</strong> → 卖出信号，可能回调</p>
+  <p><strong>50附近震荡</strong> → 方向不明，等信号</p>
+</div>
+
+<div class="danger">
+  ⚠️ <strong>KDJ在强势股上会"钝化"！</strong>  
+  如果股票持续大涨，KDJ可能一直在80以上，这时KDJ的金叉死叉就失效了。  
+  <strong>对策：</strong>KDJ适合震荡市和弱势股，强势股看MACD更靠谱。
+</div>
+
+<h2>三、RSI（强弱指标）</h2>
+<p>RSI和KDJ类似，也是判断超买超卖，但更稳定：</p>
+
+<table>
+  <tr><th>RSI值</th><th>状态</th><th>含义</th></tr>
+  <tr><td class="red">> 70</td><td>超买</td><td>涨太多，可能回调</td></tr>
+  <tr><td>30 - 70</td><td>正常</td><td>方向不明</td></tr>
+  <tr><td class="green">< 30</td><td>超卖</td><td>跌太多，可能反弹</td></tr>
+</table>
+
+<div class="success">
+  ✅ <strong>RSI比KDJ更稳定，不容易频繁发出假信号。</strong>做T时，RSI跌破30时低吸，突破70时高抛，胜率较高。
+</div>
+
+<h2>四、布林带（BOLL）</h2>
+<p>布林带像一条"通道"，告诉你股价大部分时间在哪个范围内波动：</p>
+
+<div class="svg-container">
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="280" fill="#0d1117" rx="8"/>
+  <text x="350" y="25" fill="#d29922" text-anchor="middle" font-size="16" font-weight="bold">布林带（BOLL）结构</text>
+
+  <!-- 上轨 -->
+  <path d="M50,80 Q200,70 350,75 Q500,65 650,80" stroke="#f85149" stroke-width="2" fill="none"/>
+  <text x="660" y="75" fill="#f85149" font-size="11">上轨</text>
+  <text x="660" y="90" fill="#8b949e" font-size="10">压力位</text>
+
+  <!-- 中轨 -->
+  <path d="M50,140 Q200,135 350,138 Q500,130 650,140" stroke="#58a6ff" stroke-width="2" fill="none"/>
+  <text x="660" y="135" fill="#58a6ff" font-size="11">中轨</text>
+  <text x="660" y="150" fill="#8b949e" font-size="10">= MA20</text>
+
+  <!-- 下轨 -->
+  <path d="M50,200 Q200,195 350,198 Q500,190 650,200" stroke="#3fb950" stroke-width="2" fill="none"/>
+  <text x="660" y="195" fill="#3fb950" font-size="11">下轨</text>
+  <text x="660" y="210" fill="#8b949e" font-size="10">支撑位</text>
+
+  <!-- 填充 -->
+  <path d="M50,80 Q200,70 350,75 Q500,65 650,80 L650,200 Q500,190 350,198 Q200,195 50,200 Z" fill="#58a6ff08"/>
+
+  <!-- 股价线 -->
+  <path d="M50,160 Q100,155 150,140 Q200,120 250,130 Q300,145 350,155 Q400,170 450,185 Q500,195 550,180 Q600,160 650,150" stroke="#e6edf3" stroke-width="2" fill="none"/>
+
+  <!-- 信号标注 -->
+  <circle cx="450" cy="185" r="6" fill="none" stroke="#3fb950" stroke-width="2"/>
+  <text x="450" y="215" fill="#3fb950" text-anchor="middle" font-size="10">触下轨=低吸</text>
+  <circle cx="250" cy="120" r="6" fill="none" stroke="#f85149" stroke-width="2"/>
+  <text x="250" y="110" fill="#f85149" text-anchor="middle" font-size="10">触上轨=高抛</text>
+
+  <!-- 总结 -->
+  <rect x="150" y="240" width="400" height="30" rx="6" fill="#d2992233"/>
+  <text x="350" y="260" fill="#d29922" text-anchor="middle" font-size="13" font-weight="bold">做T核心：下轨买、上轨卖、中轨看方向</text>
+</svg>
+</div>
+
+<h2>五、四大指标怎么搭配用</h2>
+
+<table>
+  <tr><th>指标</th><th>强项</th><th>弱项</th><th>适合场景</th></tr>
+  <tr><td>MACD</td><td>判断趋势方向</td><td>反应慢</td><td>确认大方向</td></tr>
+  <tr><td>KDJ</td><td>找短线买卖点</td><td>容易钝化</td><td>震荡市做T</td></tr>
+  <tr><td>RSI</td><td>判断超买超卖</td><td>信号少</td><td>辅助确认</td></tr>
+  <tr><td>布林带</td><td>给价格划区间</td><td>趋势市失效</td><td>找支撑压力</td></tr>
+</table>
+
+<div class="success">
+  ✅ <strong>做T黄金组合：MACD定方向 + KDJ找时机 + 布林带定区间</strong>  
+  第1步：看MACD，趋势向上才做多（低吸高抛）  
+  第2步：看KDJ/RSI，超卖区金叉时低吸  
+  第3步：看布林带，下轨买、上轨卖  
+  三个信号同时出现=胜率最高
+</div>
+
+<div class="summary">
+  <h3 style="color:#58a6ff;border:none;padding:0;margin:0 0 8px 0">📝 本课要点</h3>
+  <ul>
+    <li>MACD：金叉看涨死叉看跌，柱子变化比交叉更快</li>
+    <li>KDJ：>80超买注意回调，<20超卖可能反弹</li>
+    <li>RSI：>70超买，<30超卖，比KDJ更稳定</li>
+    <li>布林带：下轨支撑、上轨压力、中轨=MA20</li>
+    <li>做T组合：MACD方向 + KDJ时机 + 布林带区间</li>
+    <li>任何单一指标都不靠谱，多指标共振才操作</li>
+  </ul>
+</div>
+
+<div class="quiz">
+  <h3>✏️ 练习题</h3>
+  <p>1. MACD绿柱连续3天变短，说明什么？你会怎么操作？</p>
+  <p>2. KDJ在80以上连续5天，股价还在涨，这叫什么现象？怎么处理？</p>
+  <p>3. 股价触及布林带下轨，同时KDJ的K线在20以下上穿D线，你怎么操作？</p>
+  <p>4. 天邦食品当前处于下跌趋势（数据截至2026年5月18日），MACD死叉、KDJ在50附近，布林带股价在中轨下方。如果明天股价跌到布林带下轨，你会低吸吗？为什么？</p>
+</div>
+
+<nav style="margin-top:30px">
+  <a href="02-均线系统.html">← 上一课</a>
+  <a href="../index.html">🏠 目录</a>
+  <a href="04-量价关系.html">下一课 →</a>
+</nav>
+
+</div>
+</body>
+</html>

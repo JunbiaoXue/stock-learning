@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第12课：财务指标 - 炒股实战教材</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.9;padding:20px}
+.container{max-width:800px;margin:0 auto}
+nav{margin-bottom:30px;display:flex;gap:10px;flex-wrap:wrap}
+nav a{color:#58a6ff;text-decoration:none;padding:6px 14px;border:1px solid #30363d;border-radius:6px;font-size:.9em;transition:all .2s}
+nav a:hover{background:#1f6feb33;border-color:#58a6ff}
+h1{font-size:1.8em;margin-bottom:6px;color:#58a6ff}
+.desc{color:#8b949e;margin-bottom:30px}
+h2{font-size:1.4em;margin:30px 0 12px;color:#f78166;border-left:4px solid #f78166;padding-left:12px}
+p{margin-bottom:12px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px 24px;margin:16px 0}
+.card-title{font-weight:bold;color:#58a6ff;margin-bottom:8px;font-size:1.05em}
+.highlight{background:#1f6feb22;border-left:3px solid #58a6ff;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.danger{background:#f8514922;border-left:3px solid #f85149;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.success{background:#3fb95022;border-left:3px solid #3fb950;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95em}
+th{background:#1f6feb33;color:#58a6ff;padding:10px 14px;text-align:left;border-bottom:2px solid #30363d}
+td{padding:10px 14px;border-bottom:1px solid #21262d}
+.quiz{background:#161b22;border:2px solid #f78166;border-radius:10px;padding:20px 24px;margin:20px 0}
+.quiz h3{color:#f78166;border:none;padding:0;margin-top:0}
+.quiz p{margin:8px 0;padding-left:20px}
+.summary{background:#1f6feb11;border:1px solid #1f6feb44;border-radius:10px;padding:20px 24px;margin:20px 0}
+.summary li{margin:6px 0}
+.svg-container{text-align:center;margin:16px 0;background:#161b22;border-radius:10px;padding:20px;border:1px solid #30363d}
+.red{color:#f85149}.green{color:#3fb950}.blue{color:#58a6ff}.yellow{color:#d29922}
+</style>
+</head>
+<body>
+<div class="container">
+
+<nav>
+  <a href="../03-做T实战/04-天邦实战案例.html">← 上一课</a>
+  <a href="../index.html">🏠 目录</a>
+  <a href="02-行业逻辑.html">下一课 →</a>
+</nav>
+
+<h1>💰 第12课：财务指标</h1>
+<p class="desc">做T看技术，但也要懂基本面。基本面好的股票做T更安心，基本面差的股票做T容易踩雷。这课教你快速看懂最重要的5个财务指标。</p>
+
+<h2>一、5个核心财务指标</h2>
+
+<div class="svg-container">
+<svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="350" fill="#0d1117" rx="8"/>
+  <text x="350" y="30" fill="#d29922" text-anchor="middle" font-size="16" font-weight="bold">5个指标，5秒钟判断公司好坏</text>
+
+  <!-- PE -->
+  <rect x="30" y="50" width="200" height="90" rx="10" fill="#58a6ff11" stroke="#58a6ff" stroke-width="2"/>
+  <text x="130" y="75" fill="#58a6ff" text-anchor="middle" font-size="20" font-weight="bold">PE</text>
+  <text x="130" y="98" fill="#e6edf3" text-anchor="middle" font-size="12">市盈率</text>
+  <text x="130" y="118" fill="#8b949e" text-anchor="middle" font-size="11">多久能回本</text>
+  <text x="130" y="133" fill="#d29922" text-anchor="middle" font-size="10">越低越便宜（一般情况）</text>
+
+  <!-- PB -->
+  <rect x="250" y="50" width="200" height="90" rx="10" fill="#3fb95011" stroke="#3fb950" stroke-width="2"/>
+  <text x="350" y="75" fill="#3fb950" text-anchor="middle" font-size="20" font-weight="bold">PB</text>
+  <text x="350" y="98" fill="#e6edf3" text-anchor="middle" font-size="12">市净率</text>
+  <text x="350" y="118" fill="#8b949e" text-anchor="middle" font-size="11">股价vs净资产</text>
+  <text x="350" y="133" fill="#d29922" text-anchor="middle" font-size="10"><1可能被低估</text>
+
+  <!-- ROE -->
+  <rect x="470" y="50" width="200" height="90" rx="10" fill="#f7816611" stroke="#f78166" stroke-width="2"/>
+  <text x="570" y="75" fill="#f78166" text-anchor="middle" font-size="20" font-weight="bold">ROE</text>
+  <text x="570" y="98" fill="#e6edf3" text-anchor="middle" font-size="12">净资产收益率</text>
+  <text x="570" y="118" fill="#8b949e" text-anchor="middle" font-size="11">公司赚钱效率</text>
+  <text x="570" y="133" fill="#d29922" text-anchor="middle" font-size="10">>15%是好公司</text>
+
+  <!-- 营收 -->
+  <rect x="140" y="160" width="200" height="90" rx="10" fill="#d2992211" stroke="#d29922" stroke-width="2"/>
+  <text x="240" y="185" fill="#d29922" text-anchor="middle" font-size="16" font-weight="bold">营收增速</text>
+  <text x="240" y="208" fill="#e6edf3" text-anchor="middle" font-size="12">收入增长速度</text>
+  <text x="240" y="228" fill="#8b949e" text-anchor="middle" font-size="11">公司在长大吗？</text>
+  <text x="240" y="243" fill="#d29922" text-anchor="middle" font-size="10">>20%是高增长</text>
+
+  <!-- 净利润 -->
+  <rect x="360" y="160" width="200" height="90" rx="10" fill="#f8514911" stroke="#f85149" stroke-width="2"/>
+  <text x="460" y="185" fill="#f85149" text-anchor="middle" font-size="16" font-weight="bold">净利润</text>
+  <text x="460" y="208" fill="#e6edf3" text-anchor="middle" font-size="12">最终赚了多少钱</text>
+  <text x="460" y="228" fill="#8b949e" text-anchor="middle" font-size="11">是赚还是亏？</text>
+  <text x="460" y="243" fill="#d29922" text-anchor="middle" font-size="10">连续亏损要小心</text>
+
+  <!-- 底部 -->
+  <rect x="100" y="270" width="500" height="65" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="350" y="295" fill="#3fb950" text-anchor="middle" font-size="14" font-weight="bold">好公司画像</text>
+  <text x="350" y="315" fill="#8b949e" text-anchor="middle" font-size="12">PE低 + PB低 + ROE高 + 营收增长 + 净利润正</text>
+  <text x="350" y="330" fill="#d29922" text-anchor="middle" font-size="11">满足3条以上 = 可以做T的好标的</text>
+</svg>
+</div>
+
+<div class="danger">
+  ⚠️ 注意：周期股（如猪肉、钢铁）PE解读不同——PE低可能是盈利高点该卖，PE高可能是亏损低点该买。详见行业逻辑课。
+</div>
+
+<h2>二、PE（市盈率）—— 多久回本</h2>
+
+<div class="card">
+  <div class="card-title">📐 PE = 股价 ÷ 每股收益</div>
+  <p>PE=10，意味着按今年利润，10年能回本</p>
+  <p>PE=100，意味着100年才回本，贵！</p>
+</div>
+
+<table>
+  <tr><th>PE范围</th><th>含义</th><th>建议</th></tr>
+  <tr><td>0-15</td><td class="green">便宜，可能被低估</td><td>关注，结合行业看</td></tr>
+  <tr><td>15-30</td><td>合理估值</td><td>正常水平</td></tr>
+  <tr><td>30-60</td><td class="yellow">偏贵</td><td>成长股可以接受</td></tr>
+  <tr><td>>60</td><td class="red">很贵，泡沫风险</td><td>谨慎，除非高增长</td></tr>
+  <tr><td>负数</td><td class="red">亏损！</td><td>天邦食品就是负PE</td></tr>
+</table>
+
+<div class="danger">
+  ⚠️ <strong>天邦食品PE为负！</strong>说明公司在亏钱。亏钱的公司做T要格外小心，因为基本面差，股价容易继续跌。这就是为什么设2.65元止损线——基本面不支持长期持有。
+</div>
+
+<h2>三、PB（市净率）—— 跌破净资产了吗</h2>
+
+<div class="card">
+  <div class="card-title">📐 PB = 股价 ÷ 每股净资产</div>
+  <p>PB=0.8，意味着股价只有净资产的80%，打折买</p>
+  <p>PB=3，意味着花3倍价格买净资产，贵了</p>
+</div>
+
+<div class="highlight">
+  💡 <strong>PB<1的股票做T相对安全</strong>，因为就算公司破产清算，理论上你也能拿回净资产的钱。天邦食品PB约0.8，说明股价低于净资产，但预重整有不确定性。天邦食品因亏损，PB低于1，说明市场给予折价。
+</div>
+
+<h2>四、ROE（净资产收益率）—— 赚钱效率</h2>
+<p>ROE = 净利润 ÷ 净资产 × 100%</p>
+<p>巴菲特最看重的指标，ROE>15%连续5年 = 优秀公司</p>
+
+<div class="success">
+  ✅ <strong>做T选股标准（简化版）：</strong>  
+  PE < 30（或负数但有转亏为盈预期）  
+  PB < 2（或<1更安全）  
+  营收增长 > 0（至少没萎缩）  
+  ROE > 10%（赚钱效率还行）  
+  满足2条以上 + 技术面有做T空间 = 可以做T
+</div>
+
+<div class="summary">
+  <h3 style="color:#58a6ff;border:none;padding:0;margin:0 0 8px 0">📝 本课要点</h3>
+  <ul>
+    <li>PE=多久回本，越低越便宜，负数=亏损</li>
+    <li>PB=股价vs净资产，<1可能是捡便宜</li>
+    <li>ROE=赚钱效率，>15%是好公司</li>
+    <li>营收增速=公司在长大吗，>20%是高增长</li>
+    <li>净利润=最终赚了还是亏了</li>
+    <li>天邦PE负、PB约0.8，基本面偏弱，做T需严格止损</li>
+  </ul>
+  <p><small style="color:#8b949e">（数据截至2026年5月18日）</small></p>
+</div>
+
+<div class="quiz">
+  <h3>✏️ 练习题</h3>
+  <p>1. 天邦食品PE为负，PB约0.8，这对做T意味着什么？</p>
+  <p>2. A公司PE=8，B公司PE=50，哪家更便宜？一定选A吗？</p>
+  <p>3. 一只股票PB=0.6，ROE=18%，营收增长25%，适合做T吗？</p>
+  <p>4. 为什么做T也要看基本面？不看会怎样？</p>
+</div>
+
+<nav style="margin-top:30px">
+  <a href="../03-做T实战/04-天邦实战案例.html">← 上一课</a>
+  <a href="../index.html">🏠 目录</a>
+  <a href="02-行业逻辑.html">下一课 →</a>
+</nav>
+
+</div>
+</body>
+</html>

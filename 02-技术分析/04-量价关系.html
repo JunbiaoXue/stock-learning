@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第7课：量价关系 - 炒股实战教材</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.9;padding:20px}
+.container{max-width:800px;margin:0 auto}
+nav{margin-bottom:30px;display:flex;gap:10px;flex-wrap:wrap}
+nav a{color:#58a6ff;text-decoration:none;padding:6px 14px;border:1px solid #30363d;border-radius:6px;font-size:.9em;transition:all .2s}
+nav a:hover{background:#1f6feb33;border-color:#58a6ff}
+h1{font-size:1.8em;margin-bottom:6px;color:#58a6ff}
+.desc{color:#8b949e;margin-bottom:30px}
+h2{font-size:1.4em;margin:30px 0 12px;color:#f78166;border-left:4px solid #f78166;padding-left:12px}
+p{margin-bottom:12px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px 24px;margin:16px 0}
+.card-title{font-weight:bold;color:#58a6ff;margin-bottom:8px;font-size:1.05em}
+.highlight{background:#1f6feb22;border-left:3px solid #58a6ff;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.danger{background:#f8514922;border-left:3px solid #f85149;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.success{background:#3fb95022;border-left:3px solid #3fb950;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95em}
+th{background:#1f6feb33;color:#58a6ff;padding:10px 14px;text-align:left;border-bottom:2px solid #30363d}
+td{padding:10px 14px;border-bottom:1px solid #21262d}
+.quiz{background:#161b22;border:2px solid #f78166;border-radius:10px;padding:20px 24px;margin:20px 0}
+.quiz h3{color:#f78166;border:none;padding:0;margin-top:0}
+.quiz p{margin:8px 0;padding-left:20px}
+.summary{background:#1f6feb11;border:1px solid #1f6feb44;border-radius:10px;padding:20px 24px;margin:20px 0}
+.summary li{margin:6px 0}
+.svg-container{text-align:center;margin:16px 0;background:#161b22;border-radius:10px;padding:20px;border:1px solid #30363d}
+.red{color:#f85149}.green{color:#3fb950}.blue{color:#58a6ff}.yellow{color:#d29922}
+</style>
+</head>
+<body>
+<div class="container">
+
+<nav>
+  <a href="03-常用指标.html">← 上一课</a>
+  <a href="../index.html">🏠 目录</a>
+  <a href="../03-做T实战/01-正T策略.html">下一阶段 →</a>
+</nav>
+
+<h1>🔄 第7课：量价关系</h1>
+<p class="desc">成交量是股价的"燃料"。没有量的上涨是虚的，放量下跌是真的危险。这课教你读懂量价之间的秘密。</p>
+
+<h2>一、核心原则：量在价先</h2>
+<p>成交量变化往往比价格变化<strong>提前</strong>出现。量先动，价后跟。所以看量可以"预判"走势。</p>
+
+<div class="svg-container">
+<svg viewBox="0 0 700 100" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="100" fill="#0d1117" rx="8"/>
+  <text x="350" y="35" fill="#d29922" text-anchor="middle" font-size="20" font-weight="bold">量 = 燃料   价 = 速度</text>
+  <text x="350" y="65" fill="#8b949e" text-anchor="middle" font-size="13">有油才能跑得远 | 没油跑不动 | 加油太多会爆</text>
+  <text x="350" y="90" fill="#d29922" text-anchor="middle" font-size="13">放量 = 加油 | 缩量 = 没油 | 天量 = 油箱满了</text>
+</svg>
+</div>
+
+<h2>二、6种量价关系</h2>
+
+<div class="svg-container">
+<svg viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="500" fill="#0d1117" rx="8"/>
+
+  <!-- 1. 放量上涨 -->
+  <rect x="30" y="15" width="320" height="110" rx="8" fill="#3fb95011" stroke="#3fb950" stroke-width="1"/>
+  <text x="50" y="40" fill="#3fb950" font-size="14" font-weight="bold">1. 放量上涨 ✅ 最健康</text>
+  <text x="50" y="65" fill="#e6edf3" font-size="12">量增价涨，资金在进场</text>
+  <text x="50" y="85" fill="#3fb950" font-size="12">→ 趋势继续，可持有</text>
+  <text x="50" y="108" fill="#8b949e" font-size="11">成交量柱越来越高 + K线收红</text>
+
+  <!-- 2. 缩量上涨 -->
+  <rect x="370" y="15" width="320" height="110" rx="8" fill="#d2992211" stroke="#d29922" stroke-width="1"/>
+  <text x="390" y="40" fill="#d29922" font-size="14" font-weight="bold">2. 缩量上涨 ⚠️ 有隐患</text>
+  <text x="390" y="65" fill="#e6edf3" font-size="12">量缩价涨，跟风不足</text>
+  <text x="390" y="85" fill="#d29922" font-size="12">→ 上涨乏力，随时回调</text>
+  <text x="390" y="108" fill="#8b949e" font-size="11">成交量越来越少但价格还在涨</text>
+
+  <!-- 3. 放量下跌 -->
+  <rect x="30" y="140" width="320" height="110" rx="8" fill="#f8514911" stroke="#f85149" stroke-width="1"/>
+  <text x="50" y="165" fill="#f85149" font-size="14" font-weight="bold">3. 放量下跌 🔴 最危险</text>
+  <text x="50" y="190" fill="#e6edf3" font-size="12">量增价跌，资金在出逃</text>
+  <text x="50" y="210" fill="#f85149" font-size="12">→ 赶紧减仓，别恋战</text>
+  <text x="50" y="233" fill="#8b949e" font-size="11">成交量暴增 + K线收大绿</text>
+
+  <!-- 4. 缩量下跌 -->
+  <rect x="370" y="140" width="320" height="110" rx="8" fill="#58a6ff11" stroke="#58a6ff" stroke-width="1"/>
+  <text x="390" y="165" fill="#58a6ff" font-size="14" font-weight="bold">4. 缩量下跌 🔵 可能见底</text>
+  <text x="390" y="190" fill="#e6edf3" font-size="12">量缩价跌，卖盘减少</text>
+  <text x="390" y="210" fill="#58a6ff" font-size="12">→ 关注底部信号，等放量反弹</text>
+  <text x="390" y="233" fill="#8b949e" font-size="11">成交量萎缩 + 小幅下跌</text>
+
+  <!-- 5. 天量天价 -->
+  <rect x="30" y="265" width="320" height="110" rx="8" fill="#f8514922" stroke="#f85149" stroke-width="2"/>
+  <text x="50" y="290" fill="#f85149" font-size="14" font-weight="bold">5. 天量天价 🚨 见顶信号</text>
+  <text x="50" y="315" fill="#e6edf3" font-size="12">成交量创历史新高+股价也创新高</text>
+  <text x="50" y="335" fill="#f85149" font-size="12">→ 主力出货，赶紧跑</text>
+  <text x="50" y="358" fill="#8b949e" font-size="11">长期上涨后突然爆量</text>
+
+  <!-- 6. 地量地价 -->
+  <rect x="370" y="265" width="320" height="110" rx="8" fill="#3fb95022" stroke="#3fb950" stroke-width="2"/>
+  <text x="390" y="290" fill="#3fb950" font-size="14" font-weight="bold">6. 地量地价 ✅ 见底信号</text>
+  <text x="390" y="315" fill="#e6edf3" font-size="12">成交量创近期新低+股价也创新低</text>
+  <text x="390" y="335" fill="#3fb950" font-size="12">→ 没人卖了，可能要反弹</text>
+  <text x="390" y="358" fill="#8b949e" font-size="11">长期下跌后成交量极度萎缩</text>
+
+  <!-- 底部总结 -->
+  <rect x="100" y="395" width="500" height="90" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="350" y="425" fill="#d29922" text-anchor="middle" font-size="15" font-weight="bold">🔑 量价关系口诀</text>
+  <text x="350" y="450" fill="#3fb950" text-anchor="middle" font-size="13">放量上涨放心持 | 放量下跌赶紧跑</text>
+  <text x="350" y="475" fill="#58a6ff" text-anchor="middle" font-size="13">缩量上涨要小心 | 缩量下跌等信号</text>
+</svg>
+</div>
+
+<h2>三、天邦食品量价分析</h2>
+
+<div class="card">
+  <div class="card-title">📐 2026年5月18日天邦量价解读（数据截至2026年5月18日）</div>
+  <p>股价下跌3.37%，换手率7.81%，成交4.41亿</p>
+  <p><strong>判断：放量下跌</strong> 🔴</p>
+  <p>这是6种量价关系中最危险的一种</p>
+  <p>说明有大量资金在卖出，卖方力量远大于买方</p>
+</div>
+
+<div class="card">
+  <div class="card-title">📐 如果明天继续放量下跌怎么办？</div>
+  <p>说明卖压还没释放完，不要急着抄底</p>
+  <p>等缩量下跌（卖盘减少）或放量反弹（买方进场）再考虑</p>
+</div>
+
+<div class="card">
+  <div class="card-title">📐 如果明天缩量止跌呢？</div>
+  <p>成交量明显萎缩（换手<3%），股价跌不动了</p>
+  <p>这可能是"缩量下跌"→见底信号</p>
+  <p>可以小仓位试探低吸，但不要一把梭</p>
+</div>
+
+<h2>四、做T中的量价应用</h2>
+
+<div class="success">
+  ✅ <strong>正T低吸时机：缩量下跌到支撑位</strong>  
+  卖的人少了，股价跌不动了，这时候低吸最安全。  
+  信号：成交量明显萎缩 + 股价到布林带下轨或均线支撑位
+</div>
+
+<div class="success">
+  ✅ <strong>反T高抛时机：放量上涨到压力位</strong>  
+  买的人多了，但股价冲不上去，这时候高抛最合适。  
+  信号：成交量放大 + 股价到布林带上轨或均线压力位
+</div>
+
+<div class="danger">
+  ⚠️ <strong>做T禁忌：放量下跌时低吸</strong>  
+  放量下跌=大量资金在跑，你跑去接飞刀。  
+  一定要等量缩下来（卖盘减少）再考虑低吸。
+</div>
+
+<div class="summary">
+  <h3 style="color:#58a6ff;border:none;padding:0;margin:0 0 8px 0">📝 本课要点</h3>
+  <ul>
+    <li>量在价先，成交量是股价的"燃料"</li>
+    <li>放量上涨=健康上涨，缩量上涨=虚涨，放量下跌=危险，缩量下跌=可能见底</li>
+    <li>天量天价=见顶，地量地价=见底</li>
+    <li>正T在缩量下跌到支撑位时低吸</li>
+    <li>反T在放量上涨到压力位时高抛</li>
+    <li>绝对不要在放量下跌时抄底</li>
+  </ul>
+</div>
+
+<div class="quiz">
+  <h3>✏️ 练习题</h3>
+  <p>1. 天邦今天放量下跌3.37%，换手7.81%，你会明天低吸做T吗？为什么？</p>
+  <p>2. 一只股票连续5天缩量下跌，第6天突然放量收阳线，你怎么看？</p>
+  <p>3. "地量地价"意味着什么？出现后马上买入吗？</p>
+  <p>4. 做T时，你更关注分时图的成交量还是日K线的成交量？为什么？</p>
+</div>
+
+<nav style="margin-top:30px">
+  <a href="03-常用指标.html">← 上一课</a>
+  <a href="../index.html">🏠 目录</a>
+  <a href="../03-做T实战/01-正T策略.html">下一阶段 →</a>
+</nav>
+
+</div>
+</body>
+</html>

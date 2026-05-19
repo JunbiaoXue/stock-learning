@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第3课：基本术语 - 炒股实战教材</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.9;padding:20px}
+.container{max-width:800px;margin:0 auto}
+nav{margin-bottom:30px;display:flex;gap:10px;flex-wrap:wrap}
+nav a{color:#58a6ff;text-decoration:none;padding:6px 14px;border:1px solid #30363d;border-radius:6px;font-size:.9em;transition:all .2s}
+nav a:hover{background:#1f6feb33;border-color:#58a6ff}
+h1{font-size:1.8em;margin-bottom:6px;color:#58a6ff}
+.desc{color:#8b949e;margin-bottom:30px}
+h2{font-size:1.4em;margin:30px 0 12px;color:#f78166;border-left:4px solid #f78166;padding-left:12px}
+h3{font-size:1.15em;margin:20px 0 8px;color:#e6edf3}
+p{margin-bottom:12px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px 24px;margin:16px 0}
+.card-title{font-weight:bold;color:#58a6ff;margin-bottom:8px;font-size:1.05em}
+.highlight{background:#1f6feb22;border-left:3px solid #58a6ff;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.danger{background:#f8514922;border-left:3px solid #f85149;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.success{background:#3fb95022;border-left:3px solid #3fb950;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95em}
+th{background:#1f6feb33;color:#58a6ff;padding:10px 14px;text-align:left;border-bottom:2px solid #30363d}
+td{padding:10px 14px;border-bottom:1px solid #21262d}
+tr:hover{background:#161b22}
+.quiz{background:#161b22;border:2px solid #f78166;border-radius:10px;padding:20px 24px;margin:20px 0}
+.quiz h3{color:#f78166;border:none;padding:0;margin-top:0}
+.quiz p{margin:8px 0;padding-left:20px}
+.summary{background:#1f6feb11;border:1px solid #1f6feb44;border-radius:10px;padding:20px 24px;margin:20px 0}
+.summary li{margin:6px 0}
+.svg-container{text-align:center;margin:16px 0;background:#161b22;border-radius:10px;padding:20px;border:1px solid #30363d}
+.red{color:#f85149}.green{color:#3fb950}.blue{color:#58a6ff}.yellow{color:#d29922}
+.term{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:16px 20px;margin:10px 0;display:flex;gap:16px;align-items:flex-start}
+.term-word{color:#58a6ff;font-weight:bold;font-size:1.1em;min-width:80px;flex-shrink:0}
+.term-def{color:#e6edf3}
+.term-ex{color:#8b949e;font-size:.9em;margin-top:4px}
+</style>
+</head>
+<body>
+<div class="container">
+
+<nav>
+  <a href="02-看盘基础.html">← 上一课</a>
+  <a href="../index.html">🏠 目录</a>
+  <a href="../02-技术分析/01-K线形态.html">下一阶段 →</a>
+</nav>
+
+<h1>📖 第3课：基本术语</h1>
+<p class="desc">炒股的人说"今天封板了""做T降成本""主力出货"，你听不懂？这课把最常见的术语一次讲清楚。（以2026年5月18日为例）</p>
+
+<h2>一、仓位术语</h2>
+
+<div class="svg-container">
+<svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="200" fill="#0d1117" rx="8"/>
+  <!-- 空仓 -->
+  <rect x="30" y="20" width="100" height="30" rx="6" fill="#30363d" stroke="#8b949e" stroke-width="1"/>
+  <text x="80" y="40" fill="#8b949e" text-anchor="middle" font-size="12">空仓 0%</text>
+  <!-- 轻仓 -->
+  <rect x="150" y="20" width="100" height="30" rx="6" fill="#3fb95022" stroke="#3fb950" stroke-width="1"/>
+  <rect x="150" y="20" width="30" height="30" rx="6" fill="#3fb95066"/>
+  <text x="200" y="40" fill="#3fb950" text-anchor="middle" font-size="12">轻仓 30%</text>
+  <!-- 半仓 -->
+  <rect x="270" y="20" width="100" height="30" rx="6" fill="#58a6ff22" stroke="#58a6ff" stroke-width="1"/>
+  <rect x="270" y="20" width="50" height="30" rx="6" fill="#58a6ff66"/>
+  <text x="320" y="40" fill="#58a6ff" text-anchor="middle" font-size="12">半仓 50%</text>
+  <!-- 重仓 -->
+  <rect x="390" y="20" width="100" height="30" rx="6" fill="#d2992222" stroke="#d29922" stroke-width="1"/>
+  <rect x="390" y="20" width="70" height="30" rx="6" fill="#d2992266"/>
+  <text x="440" y="40" fill="#d29922" text-anchor="middle" font-size="12">重仓 70%</text>
+  <!-- 满仓 -->
+  <rect x="510" y="20" width="100" height="30" rx="6" fill="#f8514922" stroke="#f85149" stroke-width="1"/>
+  <rect x="510" y="20" width="100" height="30" rx="6" fill="#f8514966"/>
+  <text x="560" y="40" fill="#f85149" text-anchor="middle" font-size="12">满仓 100%</text>
+
+  <!-- 底仓标注 -->
+  <rect x="150" y="80" width="140" height="40" rx="8" fill="#3fb95022" stroke="#3fb950" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="220" y="105" fill="#3fb950" text-anchor="middle" font-size="13">底仓 = 长期持有部分</text>
+  <rect x="320" y="80" width="140" height="40" rx="8" fill="#58a6ff22" stroke="#58a6ff" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="390" y="105" fill="#58a6ff" text-anchor="middle" font-size="13">T仓 = 做T用浮动部分</text>
+
+  <!-- 操作流程 -->
+  <text x="350" y="155" fill="#d29922" text-anchor="middle" font-size="14" font-weight="bold">建仓 → 加仓 → 减仓 → 清仓</text>
+  <text x="350" y="180" fill="#8b949e" text-anchor="middle" font-size="11">买入 → 再买 → 卖一部分 → 全部卖出</text>
+</svg>
+</div>
+
+<div class="card">
+  <div class="card-title">🔑 底仓 vs T仓（做T核心概念）</div>
+  <p><strong>底仓</strong>：你长期持有的部分，不轻易卖出。比如你持有天邦食品1万股，其中6000股作为底仓不动。</p>
+  <p><strong>T仓</strong>：用来做T的浮动部分。剩下4000股用来高抛低吸，赚差价。</p>
+  <p>底仓+T仓=总持仓。做T只动T仓，底仓不动。</p>
+</div>
+
+<h2>二、涨跌术语</h2>
+
+<div class="term">
+  <div class="term-word">涨停</div>
+  <div>
+    <div class="term-def">股价涨到当日上限（主板+10%），不能再涨了</div>
+    <div class="term-ex">天邦如果从2.97涨10%=3.27，就是涨停</div>
+  </div>
+</div>
+<div class="term">
+  <div class="term-word">跌停</div>
+  <div>
+    <div class="term-def">股价跌到当日下限（主板-10%），不能再跌了</div>
+    <div class="term-ex">天邦如果从2.97跌10%=2.67，就是跌停</div>
+  </div>
+</div>
+<div class="term">
+  <div class="term-word">封板</div>
+  <div>
+    <div class="term-def">涨停/跌停后，排队等成交的单子很多，板没被打开</div>
+    <div class="term-ex">涨停价上有10万手买单排队 = 封板很牢</div>
+  </div>
+</div>
+<div class="term">
+  <div class="term-word">炸板</div>
+  <div>
+    <div class="term-def">涨停/跌停后又被打开，价格回到了涨停价以内</div>
+    <div class="term-ex">涨停3.27，但又跌回3.20 = 炸板了，不好</div>
+  </div>
+</div>
+<div class="term">
+  <div class="term-word">反包</div>
+  <div>
+    <div class="term-def">昨天跌，今天全部涨回来（阳线盖住阴线）；或反过来</div>
+    <div class="term-ex">昨天跌5%，今天涨6% = 阳包阴，看涨信号</div>
+  </div>
+</div>
+<div class="term">
+  <div class="term-word">高开/低开</div>
+  <div>
+    <div class="term-def">开盘价>昨收=高开；开盘价<昨收=低开</div>
+    <div class="term-ex">天邦昨收2.97，今开2.96=低开，偏弱</div>
+  </div>
+</div>
+
+<h2>三、资金术语</h2>
+
+<div class="term">
+  <div class="term-word">主力</div>
+  <div>
+    <div class="term-def">大资金，包括机构（基金、保险、券商自营）和游资（大户、私募）</div>
+    <div class="term-ex">主力买入=大单净流入，可能要拉升</div>
+  </div>
+</div>
+<div class="term">
+  <div class="term-word">散户</div>
+  <div>
+    <div class="term-def">小资金投资者，就是你和我</div>
+    <div class="term-ex">散户的特点：追涨杀跌、拿不住、信息滞后</div>
+  </div>
+</div>
+<div class="term">
+  <div class="term-word">北向资金</div>
+  <div>
+    <div class="term-def">通过沪深股通买入A股的外资，被视为"聪明钱"</div>
+    <div class="term-ex">北向资金连续净买入=外资看好，偏利好</div>
+  </div>
+</div>
+<div class="term">
+  <div class="term-word">龙虎榜</div>
+  <div>
+    <div class="term-def">当日涨跌幅/换手率异常的股票，公布大资金买卖明细</div>
+    <div class="term-ex">看到机构专用席位买入=有机构进场，可关注</div>
+  </div>
+</div>
+
+<h2>四、操作术语</h2>
+
+<div class="svg-container">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="300" fill="#0d1117" rx="8"/>
+  <text x="350" y="25" fill="#d29922" text-anchor="middle" font-size="16" font-weight="bold">做T的两个方向</text>
+
+  <!-- 正T -->
+  <rect x="30" y="45" width="310" height="240" rx="10" fill="#3fb95011" stroke="#3fb950" stroke-width="1"/>
+  <text x="185" y="75" fill="#3fb950" text-anchor="middle" font-size="15" font-weight="bold">正T（先买后卖）</text>
+  <rect x="60" y="90" width="250" height="45" rx="6" fill="#3fb95033"/>
+  <text x="185" y="110" fill="#3fb950" text-anchor="middle" font-size="13">Step 1: 低点买入（2.80元）</text>
+  <text x="185" y="128" fill="#8b949e" text-anchor="middle" font-size="11">用现金买入，这是"新仓位"</text>
+  <line x1="185" y1="135" x2="185" y2="155" stroke="#3fb950" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="210" y="148" fill="#3fb950" font-size="11">等涨</text>
+  <rect x="60" y="155" width="250" height="45" rx="6" fill="#58a6ff33"/>
+  <text x="185" y="175" fill="#58a6ff" text-anchor="middle" font-size="13">Step 2: 高点卖出（2.95元）</text>
+  <text x="185" y="193" fill="#8b949e" text-anchor="middle" font-size="11">卖出底仓（旧仓位），变相T+0</text>
+  <rect x="100" y="215" width="170" height="35" rx="6" fill="#3fb95044"/>
+  <text x="185" y="238" fill="#3fb950" text-anchor="middle" font-size="14" font-weight="bold">赚 0.15元/股 💰</text>
+  <text x="185" y="270" fill="#8b949e" text-anchor="middle" font-size="10">适合：当天低开探底后反弹</text>
+
+  <!-- 反T -->
+  <rect x="360" y="45" width="310" height="240" rx="10" fill="#f8514911" stroke="#f85149" stroke-width="1"/>
+  <text x="515" y="75" fill="#f85149" text-anchor="middle" font-size="15" font-weight="bold">反T（先卖后买）</text>
+  <rect x="390" y="90" width="250" height="45" rx="6" fill="#f8514933"/>
+  <text x="515" y="110" fill="#f85149" text-anchor="middle" font-size="13">Step 1: 高点卖出（2.95元）</text>
+  <text x="515" y="128" fill="#8b949e" text-anchor="middle" font-size="11">卖出底仓（旧仓位），锁定高价</text>
+  <line x1="515" y1="135" x2="515" y2="155" stroke="#f85149" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="540" y="148" fill="#f85149" font-size="11">等跌</text>
+  <rect x="390" y="155" width="250" height="45" rx="6" fill="#58a6ff33"/>
+  <text x="515" y="175" fill="#58a6ff" text-anchor="middle" font-size="13">Step 2: 低点买回（2.80元）</text>
+  <text x="515" y="193" fill="#8b949e" text-anchor="middle" font-size="11">用卖出的钱买回，变相T+0</text>
+  <rect x="430" y="215" width="170" height="35" rx="6" fill="#f8514944"/>
+  <text x="515" y="238" fill="#f85149" text-anchor="middle" font-size="14" font-weight="bold">赚 0.15元/股 💰</text>
+  <text x="515" y="270" fill="#8b949e" text-anchor="middle" font-size="10">适合：当天高开冲高后回落</text>
+</svg>
+</div>
+
+<div class="danger">
+  ⚠️ <strong>做T最大风险：T飞了</strong>  
+  反T时卖出后股价不跌反涨，你买不回来了，底仓就没了。正T时买入后股价不涨反跌，你套住了。  
+  所以做T一定要设纪律，买卖点提前想好，到了就执行。
+</div>
+
+<h2>五、其他常见术语速查</h2>
+
+<table>
+  <tr><th>术语</th><th>含义</th><th>举例</th></tr>
+  <tr><td>割肉</td><td>亏本卖出</td><td>3元买的，2.7元卖了，亏10%</td></tr>
+  <tr><td>抄底</td><td>在低位买入</td><td>股价从3元跌到2.5元，觉得到底了，买入</td></tr>
+  <tr><td>追涨</td><td>股价上涨时追着买入</td><td>看到涨停了才买进去</td></tr>
+  <tr><td>杀跌</td><td>股价下跌时恐慌卖出</td><td>一跌就慌，亏着卖</td></tr>
+  <tr><td>补仓</td><td>买入后跌了，再买一些摊低成本</td><td>3元买1000股，2.8元再买1000股，成本变2.9元</td></tr>
+  <tr><td>被套</td><td>买入后股价跌了，卖就亏</td><td>你3元买天邦，现在2.87=被套4.6%</td></tr>
+  <tr><td>解套</td><td>被套后股价涨回成本价</td><td>天邦涨回3元以上=解套</td></tr>
+  <tr><td>止损</td><td>亏到一定比例强制卖出</td><td>设-5%止损，跌到2.85就卖</td></tr>
+  <tr><td>止盈</td><td>赚了一定比例卖出落袋</td><td>设+10%止盈，涨到3.30就卖</td></tr>
+  <tr><td>踏空</td><td>没买，但股价涨了</td><td>想等2.5元买，结果直接涨到3元</td></tr>
+  <tr><td>洗盘</td><td>主力故意打压股价，逼散户交出筹码</td><td>突然大跌但很快拉回</td></tr>
+  <tr><td>拉升</td><td>主力大量买入推动股价上涨</td><td>连续几天放量上涨</td></tr>
+  <tr><td>出货</td><td>主力大量卖出，股价见顶</td><td>高位放量滞涨=主力出货</td></tr>
+</table>
+
+<div class="summary">
+  <h3 style="color:#58a6ff;border:none;padding:0;margin:0 0 8px 0">📝 本课要点</h3>
+  <ul>
+    <li>仓位：空仓→轻仓→半仓→重仓→满仓，做T要有底仓+T仓</li>
+    <li>涨跌：涨停/跌停、封板/炸板、高开/低开、反包</li>
+    <li>资金：主力=大资金，散户=小资金，北向资金=外资</li>
+    <li>做T：正T=先买后卖，反T=先卖后买，核心是利用底仓变相T+0</li>
+    <li>操作：割肉、抄底、补仓、被套、解套、止损、止盈</li>
+  </ul>
+</div>
+
+<div class="quiz">
+  <h3>✏️ 练习题</h3>
+  <p>1. 你持有天邦食品1万股（成本3.0083元），想用3000股做T仓，剩下7000股做底仓。如果今天在2.80元买回3000股做正T，2.95元卖出3000股底仓，能降多少成本？</p>
+  <p>2. 什么是"炸板"？为什么涨停板炸开不好？</p>
+  <p>3. 反T有什么风险？怎么避免？</p>
+  <p>4. 解释"踏空"和"被套"的区别，哪个更难受？</p>
+</div>
+
+<nav style="margin-top:30px">
+  <a href="02-看盘基础.html">← 上一课</a>
+  <a href="../index.html">🏠 目录</a>
+  <a href="../02-技术分析/01-K线形态.html">下一阶段：技术分析 →</a>
+</nav>
+
+</div>
+</body>
+</html>

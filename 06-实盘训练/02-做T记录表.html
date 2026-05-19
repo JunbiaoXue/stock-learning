@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第19课：做T记录表 - 炒股实战教材</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.9;padding:20px}
+.container{max-width:800px;margin:0 auto}
+nav{margin-bottom:30px;display:flex;gap:10px;flex-wrap:wrap}
+nav a{color:#58a6ff;text-decoration:none;padding:6px 14px;border:1px solid #30363d;border-radius:6px;font-size:.9em;transition:all .2s}
+nav a:hover{background:#1f6feb33;border-color:#58a6ff}
+h1{font-size:1.8em;margin-bottom:6px;color:#58a6ff}
+.desc{color:#8b949e;margin-bottom:30px}
+h2{font-size:1.4em;margin:30px 0 12px;color:#f78166;border-left:4px solid #f78166;padding-left:12px}
+p{margin-bottom:12px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px 24px;margin:16px 0}
+.card-title{font-weight:bold;color:#58a6ff;margin-bottom:8px;font-size:1.05em}
+.highlight{background:#1f6feb22;border-left:3px solid #58a6ff;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.danger{background:#f8514922;border-left:3px solid #f85149;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.success{background:#3fb95022;border-left:3px solid #3fb950;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95em}
+th{background:#1f6feb33;color:#58a6ff;padding:10px 14px;text-align:left;border-bottom:2px solid #30363d}
+td{padding:10px 14px;border-bottom:1px solid #21262d}
+.quiz{background:#161b22;border:2px solid #f78166;border-radius:10px;padding:20px 24px;margin:20px 0}
+.quiz h3{color:#f78166;border:none;padding:0;margin-top:0}
+.quiz p{margin:8px 0;padding-left:20px}
+.summary{background:#1f6feb11;border:1px solid #1f6feb44;border-radius:10px;padding:20px 24px;margin:20px 0}
+.summary li{margin:6px 0}
+.red{color:#f85149}.green{color:#3fb950}.blue{color:#58a6ff}.yellow{color:#d29922}
+</style>
+</head>
+<body>
+<div class="container">
+
+<nav>
+  <a href="01-每日复盘模板.html">← 上一课</a>
+  <a href="../index.html">🏠 目录</a>
+</nav>
+
+<h1>📋 第19课：做T记录与评估</h1>
+<p class="desc">没有记录就没有改进。这课给你做T记录模板和评估方法，让你清楚自己的做T水平，持续优化策略。</p>
+
+<h2>一、做T记录表</h2>
+
+<div class="card">
+  <div class="card-title">📊 做T记录表（每笔必填）</div>
+  <p><small style="color:#8b949e">（数据截至2026年5月18日）</small></p>
+  <table>
+    <tr><th>日期</th><th>方向</th><th>买价</th><th>卖价</th><th>股数</th><th>差价</th><th>手续费</th><th>净赚</th><th>降成本</th><th>胜/负</th></tr>
+    <tr>
+      <td>5/19</td><td>正T</td><td>2.80</td><td>2.92</td><td>2000</td><td>+0.12</td><td>~13</td><td class="green">+227</td><td>0.023</td><td class="green">✅</td>
+    </tr>
+    <tr>
+      <td>5/20</td><td>正T</td><td>2.83</td><td>2.88</td><td>2000</td><td>+0.05</td><td>~13</td><td class="green">+87</td><td>0.009</td><td class="green">✅</td>
+    </tr>
+    <tr>
+      <td>5/21</td><td>反T</td><td>2.85</td><td>2.90</td><td>2000</td><td>+0.05</td><td>~13</td><td class="green">+87</td><td>0.009</td><td class="green">✅</td>
+    </tr>
+    <tr>
+      <td>5/22</td><td>反T</td><td>2.85</td><td>2.95</td><td>2000</td><td>+0.10</td><td>~13</td><td class="green">+187</td><td>0.019</td><td class="green">✅</td>
+    </tr>
+    <tr>
+      <td>5/23</td><td>不操作</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>—</td>
+    </tr>
+  </table>
+</div>
+
+<h2>二、周度评估</h2>
+
+<div class="card">
+  <div class="card-title">📈 每周做T成绩单</div>
+  <table>
+    <tr><th>评估项</th><th>本周数据</th><th>目标</th><th>达标？</th></tr>
+    <tr><td>做T次数</td><td>____次</td><td>1-3次</td><td>✅/❌</td></tr>
+    <tr><td>胜率</td><td>____%</td><td>>60%</td><td>✅/❌</td></tr>
+    <tr><td>累计净赚</td><td>____元</td><td>>0</td><td>✅/❌</td></tr>
+    <tr><td>累计降成本</td><td>____元</td><td>>0.02元/周</td><td>✅/❌</td></tr>
+    <tr><td>最大单次亏损</td><td>____元</td><td><200元</td><td>✅/❌</td></tr>
+    <tr><td>违反纪律次数</td><td>____次</td><td>0</td><td>✅/❌</td></tr>
+    <tr><td>当前成本</td><td>____元</td><td>持续下降</td><td>✅/❌</td></tr>
+  </table>
+</div>
+
+<h2>三、月度目标追踪</h2>
+
+<table>
+  <tr><th>月份</th><th>月初成本</th><th>月末成本</th><th>降本幅度</th><th>做T次数</th><th>胜率</th></tr>
+  <tr><td>5月</td><td>3.0083</td><td>____</td><td>____</td><td>____</td><td>____%</td></tr>
+  <tr><td>6月</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____%</td></tr>
+  <tr><td>7月</td><td>____</td><td>____</td><td>____</td><td>____</td><td>____%</td></tr>
+</table>
+
+<div class="success">
+  ✅ <strong>做T成功标准：</strong>  
+  <p>胜率 > 60%（10次做T至少6次赚）</p>
+  <p>月降成本 > 0.04元（4次做T × 每次0.01元）</p>
+  <p>最大单次亏损 < 200元（控制在2%以内）</p>
+  <p>无违反纪律的操作</p>
+</div>
+
+<h2>四、做T常见错误对照表</h2>
+
+<table>
+  <tr><th>错误行为</th><th>正确做法</th><th>错误代价</th></tr>
+  <tr><td class="red">满仓做T</td><td class="green">只用20%仓位做T</td><td>一次失误重创</td></tr>
+  <tr><td class="red">没计划临时做T</td><td class="green">盘前设好买卖点</td><td>容易追涨杀跌</td></tr>
+  <tr><td class="red">做T失败加仓</td><td class="green">认亏出场等下次</td><td>越加越亏深套</td></tr>
+  <tr><td class="red">当天没完成做T</td><td class="green">尾盘必须补上</td><td>变成加仓/减仓</td></tr>
+  <tr><td class="red">振幅<2%也做T</td><td class="green">振幅>2%才做T</td><td>赚的不够手续费</td></tr>
+  <tr><td class="red">连续亏损不停手</td><td class="green">连亏3次停1周</td><td>越做越急越亏</td></tr>
+</table>
+
+<div class="highlight">
+  💡 <strong>教材学完了，但学习才刚开始！</strong>  
+  回到第1课再看一遍，结合每天的实际操作，你会发现每次重读都有新收获。  
+  炒股是终身学习，做T是持续改进。祝你早日解套，稳定盈利！ 🎉
+</div>
+
+<div class="summary">
+  <h3 style="color:#58a6ff;border:none;padding:0;margin:0 0 8px 0">📝 本课要点</h3>
+  <ul>
+    <li>做T记录表：每笔必填日期、方向、买卖价、差价、净赚</li>
+    <li>周度评估：胜率>60%、月降本>0.04元、无违反纪律</li>
+    <li>月度追踪：成本是否持续下降</li>
+    <li>6大常见错误要避免，对照表检查</li>
+    <li>学习是持续过程，多复盘多改进</li>
+  </ul>
+</div>
+
+<div class="quiz">
+  <h3>✏️ 终极练习</h3>
+  <p>1. 用做T记录表模板，制定你接下来一周的做T计划</p>
+  <p>2. 设定你的周度评估目标（胜率、降本幅度等）</p>
+  <p>3. 回顾整套教材，选出你觉得最重要的3条纪律，写在纸上贴在电脑旁</p>
+  <p>4. 写下你的解套目标价和预计时间</p>
+</div>
+
+<nav style="margin-top:30px">
+  <a href="01-每日复盘模板.html">← 上一课</a>
+  <a href="../index.html">🏠 📚 回到目录</a>
+</nav>
+
+</div>
+</body>
+</html>

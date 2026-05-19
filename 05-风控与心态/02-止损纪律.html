@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第16课：止损纪律 - 炒股实战教材</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.9;padding:20px}
+.container{max-width:800px;margin:0 auto}
+nav{margin-bottom:30px;display:flex;gap:10px;flex-wrap:wrap}
+nav a{color:#58a6ff;text-decoration:none;padding:6px 14px;border:1px solid #30363d;border-radius:6px;font-size:.9em;transition:all .2s}
+nav a:hover{background:#1f6feb33;border-color:#58a6ff}
+h1{font-size:1.8em;margin-bottom:6px;color:#58a6ff}
+.desc{color:#8b949e;margin-bottom:30px}
+h2{font-size:1.4em;margin:30px 0 12px;color:#f78166;border-left:4px solid #f78166;padding-left:12px}
+p{margin-bottom:12px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px 24px;margin:16px 0}
+.card-title{font-weight:bold;color:#58a6ff;margin-bottom:8px;font-size:1.05em}
+.highlight{background:#1f6feb22;border-left:3px solid #58a6ff;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.danger{background:#f8514922;border-left:3px solid #f85149;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.success{background:#3fb95022;border-left:3px solid #3fb950;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95em}
+th{background:#1f6feb33;color:#58a6ff;padding:10px 14px;text-align:left;border-bottom:2px solid #30363d}
+td{padding:10px 14px;border-bottom:1px solid #21262d}
+.quiz{background:#161b22;border:2px solid #f78166;border-radius:10px;padding:20px 24px;margin:20px 0}
+.quiz h3{color:#f78166;border:none;padding:0;margin-top:0}
+.quiz p{margin:8px 0;padding-left:20px}
+.summary{background:#1f6feb11;border:1px solid #1f6feb44;border-radius:10px;padding:20px 24px;margin:20px 0}
+.summary li{margin:6px 0}
+.svg-container{text-align:center;margin:16px 0;background:#161b22;border-radius:10px;padding:20px;border:1px solid #30363d}
+.red{color:#f85149}.green{color:#3fb950}.blue{color:#58a6ff}.yellow{color:#d29922}
+</style>
+</head>
+<body>
+<div class="container">
+
+<nav>
+  <a href="01-仓位管理.html">← 上一课</a>
+  <a href="../index.html">🏠 目录</a>
+  <a href="03-心态管理.html">下一课 →</a>
+</nav>
+
+<h1>🛑 第16课：止损纪律</h1>
+<p class="desc">止损是保命的最后一道防线。不止损的人，10次赚的钱1次就亏完。这课教你怎么设止损线，什么时候必须走人。</p>
+
+<h2>一、为什么必须止损</h2>
+
+<div class="svg-container">
+<svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="220" fill="#0d1117" rx="8"/>
+  <text x="350" y="25" fill="#f85149" text-anchor="middle" font-size="16" font-weight="bold">回本所需涨幅（亏损与回本的关系）</text>
+
+  <line x1="60" y1="40" x2="60" y2="180" stroke="#30363d" stroke-width="1"/>
+  <line x1="60" y1="180" x2="650" y2="180" stroke="#30363d" stroke-width="1"/>
+
+  <!-- 柱状图 -->
+  <rect x="80" y="165" width="50" height="15" rx="2" fill="#3fb95066"/>
+  <text x="105" y="195" fill="#8b949e" font-size="9" text-anchor="middle">亏5%</text>
+  <text x="105" y="158" fill="#3fb950" font-size="9" text-anchor="middle">需涨5.3%</text>
+
+  <rect x="150" y="145" width="50" height="35" rx="2" fill="#3fb95044"/>
+  <text x="175" y="195" fill="#8b949e" font-size="9" text-anchor="middle">亏10%</text>
+  <text x="175" y="138" fill="#d29922" font-size="9" text-anchor="middle">需涨11.1%</text>
+
+  <rect x="220" y="120" width="50" height="60" rx="2" fill="#d2992244"/>
+  <text x="245" y="195" fill="#8b949e" font-size="9" text-anchor="middle">亏20%</text>
+  <text x="245" y="113" fill="#f78166" font-size="9" text-anchor="middle">需涨25%</text>
+
+  <rect x="290" y="85" width="50" height="95" rx="2" fill="#f7816644"/>
+  <text x="315" y="195" fill="#8b949e" font-size="9" text-anchor="middle">亏30%</text>
+  <text x="315" y="78" fill="#f85149" font-size="9" text-anchor="middle">需涨42.9%</text>
+
+  <rect x="360" y="50" width="50" height="130" rx="2" fill="#f8514944"/>
+  <text x="385" y="195" fill="#8b949e" font-size="9" text-anchor="middle">亏40%</text>
+  <text x="385" y="43" fill="#f85149" font-size="9" text-anchor="middle">需涨66.7%</text>
+
+  <rect x="430" y="30" width="50" height="150" rx="2" fill="#f8514966"/>
+  <text x="455" y="195" fill="#8b949e" font-size="9" text-anchor="middle">亏50%</text>
+  <text x="455" y="23" fill="#f85149" font-size="10" font-weight="bold">需涨100%！</text>
+
+  <!-- 标注 -->
+  <rect x="520" y="55" width="160" height="90" rx="8" fill="#f8514922" stroke="#f85149" stroke-width="1"/>
+  <text x="600" y="80" fill="#f85149" text-anchor="middle" font-size="12" font-weight="bold">核心结论</text>
+  <text x="600" y="100" fill="#e6edf3" text-anchor="middle" font-size="11">亏10%好回本</text>
+  <text x="600" y="118" fill="#e6edf3" text-anchor="middle" font-size="11">亏30%很难回本</text>
+  <text x="600" y="136" fill="#f85149" text-anchor="middle" font-size="11" font-weight="bold">亏50%翻倍才回本</text>
+</svg>
+</div>
+
+<h2>二、止损线怎么设</h2>
+
+<div class="card">
+  <div class="card-title">📐 天邦食品止损方案</div>
+  <p><strong>硬止损：2.65元</strong>（距成本-11.9%）</p>
+  <p>→ 跌破这个价无条件减仓50%以上</p>
+  <p>→ 这是你保命的底线，不商量</p>
+  <p><strong>技术止损：MA20下方3%</strong></p>
+  <p>→ 股价跌破MA20超过3%，减仓30%</p>
+  <p><strong>做T止损：买后跌3%没反弹</strong></p>
+  <p>→ 做T买入后跌3%以上，认亏卖出，不加仓</p>
+  <p><small style="color:#8b949e">（数据截至2026年5月18日，止损价基于当时成本3.0083元）</small></p>
+</div>
+
+<table>
+  <tr><th>止损类型</th><th>触发条件</th><th>操作</th></tr>
+  <tr><td class="red">硬止损</td><td>跌破2.65元</td><td>减仓50%以上</td></tr>
+  <tr><td class="yellow">技术止损</td><td>跌破MA20超过3%</td><td>减仓30%</td></tr>
+  <tr><td class="blue">做T止损</td><td>买入后跌3%没反弹</td><td>认亏卖出T仓</td></tr>
+  <tr><td class="red">基本面止损</td><td>预重整失败/被ST</td><td>清仓！</td></tr>
+</table>
+
+<h2>三、不止损的5大借口（别骗自己）</h2>
+
+<div class="danger">
+  <p>❌ <strong>"已经跌这么多了，不会再跌了"</strong></p>
+  <p>→ 事实：跌了50%还能再跌50%，从10块到5块到2.5块</p>
+</div>
+
+<div class="danger">
+  <p>❌ <strong>"等反弹再卖"</strong></p>
+  <p>→ 事实：可能等到退市都没反弹，越等亏越多</p>
+</div>
+
+<div class="danger">
+  <p>❌ <strong>"做长线，不看短期波动"</strong></p>
+  <p>→ 事实：你买的时候就不是做长线，别自欺欺人</p>
+</div>
+
+<div class="danger">
+  <p>❌ <strong>"卖了就真亏了，不卖是浮亏"</strong></p>
+  <p>→ 事实：浮亏和真亏没区别，钱已经少了</p>
+</div>
+
+<div class="danger">
+  <p>❌ <strong>"我加仓摊低成本就好了"</strong></p>
+  <p>→ 事实：加仓=在亏损票上投入更多钱=越亏越多</p>
+</div>
+
+<div class="summary">
+  <h3 style="color:#58a6ff;border:none;padding:0;margin:0 0 8px 0">📝 本课要点</h3>
+  <ul>
+    <li>亏10%需涨11%回本，亏50%需涨100%回本</li>
+    <li>天邦硬止损2.65元，跌破必须减仓</li>
+    <li>4种止损：硬止损、技术止损、做T止损、基本面止损</li>
+    <li>5大不止损借口都是自欺欺人</li>
+    <li>止损=保命，不丢人，亏光了才丢人</li>
+  </ul>
+</div>
+
+<div class="quiz">
+  <h3>✏️ 练习题</h3>
+  <p>1. 天邦跌到2.65元，你浮亏多少？这时候你该怎么操作？</p>
+  <p>2. 你做正T在2.82元买入，股价跌到2.70元，你怎么办？</p>
+  <p>3. 天邦公告"预重整失败"，股价跌停，你该怎么做？</p>
+  <p>4. 为什么说"浮亏不是真亏"是最大的骗局？</p>
+</div>
+
+<nav style="margin-top:30px">
+  <a href="01-仓位管理.html">← 上一课</a>
+  <a href="../index.html">🏠 目录</a>
+  <a href="03-心态管理.html">下一课 →</a>
+</nav>
+
+</div>
+</body>
+</html>

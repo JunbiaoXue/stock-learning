@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第9课：反T策略 - 炒股实战教材</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.9;padding:20px}
+.container{max-width:800px;margin:0 auto}
+nav{margin-bottom:30px;display:flex;gap:10px;flex-wrap:wrap}
+nav a{color:#58a6ff;text-decoration:none;padding:6px 14px;border:1px solid #30363d;border-radius:6px;font-size:.9em;transition:all .2s}
+nav a:hover{background:#1f6feb33;border-color:#58a6ff}
+h1{font-size:1.8em;margin-bottom:6px;color:#58a6ff}
+.desc{color:#8b949e;margin-bottom:30px}
+h2{font-size:1.4em;margin:30px 0 12px;color:#f78166;border-left:4px solid #f78166;padding-left:12px}
+p{margin-bottom:12px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px 24px;margin:16px 0}
+.card-title{font-weight:bold;color:#58a6ff;margin-bottom:8px;font-size:1.05em}
+.highlight{background:#1f6feb22;border-left:3px solid #58a6ff;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.danger{background:#f8514922;border-left:3px solid #f85149;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.success{background:#3fb95022;border-left:3px solid #3fb950;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95em}
+th{background:#1f6feb33;color:#58a6ff;padding:10px 14px;text-align:left;border-bottom:2px solid #30363d}
+td{padding:10px 14px;border-bottom:1px solid #21262d}
+.quiz{background:#161b22;border:2px solid #f78166;border-radius:10px;padding:20px 24px;margin:20px 0}
+.quiz h3{color:#f78166;border:none;padding:0;margin-top:0}
+.quiz p{margin:8px 0;padding-left:20px}
+.summary{background:#1f6feb11;border:1px solid #1f6feb44;border-radius:10px;padding:20px 24px;margin:20px 0}
+.summary li{margin:6px 0}
+.svg-container{text-align:center;margin:16px 0;background:#161b22;border-radius:10px;padding:20px;border:1px solid #30363d}
+.red{color:#f85149}.green{color:#3fb950}.blue{color:#58a6ff}.yellow{color:#d29922}
+</style>
+</head>
+<body>
+<div class="container">
+
+<nav>
+  <a href="01-正T策略.html">← 上一课</a>
+  <a href="../index.html">🏠 目录</a>
+  <a href="03-分时图看盘.html">下一课 →</a>
+</nav>
+
+<h1>🔴 第9课：反T策略（先卖后买）</h1>
+<p class="desc">反T是正T的反向操作：先在高点卖出底仓，等股价跌下来再买回。适合高开低走的行情。风险比正T大，因为可能T飞。</p>
+
+<h2>一、反T操作流程</h2>
+
+<div class="svg-container">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="300" fill="#0d1117" rx="8"/>
+  <text x="350" y="30" fill="#f85149" text-anchor="middle" font-size="18" font-weight="bold">反T完整流程</text>
+
+  <rect x="30" y="55" width="200" height="80" rx="10" fill="#f8514922" stroke="#f85149" stroke-width="2"/>
+  <text x="130" y="80" fill="#f85149" text-anchor="middle" font-size="14" font-weight="bold">Step 1 高抛</text>
+  <text x="130" y="100" fill="#e6edf3" text-anchor="middle" font-size="12">股价冲高到压力位</text>
+  <text x="130" y="120" fill="#f85149" text-anchor="middle" font-size="12">卖出底仓T仓部分</text>
+
+  <text x="250" y="95" fill="#58a6ff" font-size="24">→</text>
+
+  <rect x="270" y="55" width="160" height="80" rx="10" fill="#58a6ff22" stroke="#58a6ff" stroke-width="2"/>
+  <text x="350" y="80" fill="#58a6ff" text-anchor="middle" font-size="14" font-weight="bold">Step 2 等跌</text>
+  <text x="350" y="100" fill="#e6edf3" text-anchor="middle" font-size="12">股价回落下跌</text>
+  <text x="350" y="120" fill="#58a6ff" text-anchor="middle" font-size="12">耐心等跌到支撑位</text>
+
+  <text x="450" y="95" fill="#3fb950" font-size="24">→</text>
+
+  <rect x="470" y="55" width="200" height="80" rx="10" fill="#3fb95022" stroke="#3fb950" stroke-width="2"/>
+  <text x="570" y="80" fill="#3fb950" text-anchor="middle" font-size="14" font-weight="bold">Step 3 低吸</text>
+  <text x="570" y="100" fill="#e6edf3" text-anchor="middle" font-size="12">股价跌到支撑位</text>
+  <text x="570" y="120" fill="#3fb950" text-anchor="middle" font-size="12">用卖出资金买回</text>
+
+  <rect x="150" y="160" width="400" height="50" rx="10" fill="#3fb95033" stroke="#3fb950" stroke-width="2"/>
+  <text x="350" y="190" fill="#3fb950" text-anchor="middle" font-size="16" font-weight="bold">结果：成本降低，股数不变 💰</text>
+
+  <rect x="50" y="230" width="600" height="55" rx="8" fill="#f8514933"/>
+  <text x="350" y="255" fill="#f85149" text-anchor="middle" font-size="13" font-weight="bold">⚠️ 最大风险：卖出后股价不跌反涨 = T飞了！</text>
+  <text x="350" y="275" fill="#8b949e" text-anchor="middle" font-size="11">底仓没了，股价涨了你只赚了个差价，错过大肉</text>
+</svg>
+</div>
+
+<h2>二、正T vs 反T 对比</h2>
+
+<table>
+  <tr><th>对比项</th><th>正T（先买后卖）</th><th>反T（先卖后买）</th></tr>
+  <tr><td>操作顺序</td><td>低吸 → 高抛</td><td>高抛 → 低吸</td></tr>
+  <tr><td>适合行情</td><td>低开高走</td><td>高开低走</td></tr>
+  <tr><td>风险</td><td class="green">低，买完跌了可等</td><td class="red">高，卖完涨了T飞</td></tr>
+  <tr><td>资金要求</td><td>需要有现金</td><td>不需要额外现金</td></tr>
+  <tr><td>心理压力</td><td class="green">小，跌了还有股</td><td class="red">大，涨了没股了</td></tr>
+  <tr><td>新手推荐</td><td class="green">⭐⭐⭐ 强烈推荐</td><td class="yellow">⭐ 谨慎使用</td></tr>
+</table>
+
+<div class="danger">
+  ⚠️ <strong>新手建议：先练正T，熟练后再尝试反T！</strong>  
+  反T最大的坑就是"T飞了"——卖出后股价一路涨，你踏空了。  
+  反T只在一种情况下做：<strong>高开明确要回落</strong>（比如前一天涨停，今天高开3%以上）。
+</div>
+
+<h2>三、反T什么时候做</h2>
+
+<div class="card">
+  <div class="card-title">✅ 适合做反T的场景</div>
+  <p><strong>1. 昨天涨停，今天高开3%以上</strong> — 大概率冲高回落，高位卖</p>
+  <p><strong>2. 股价触及布林带上轨或均线压力位</strong> — 压力位冲不过，先卖</p>
+  <p><strong>3. 大盘环境差，个股逆势上涨</strong> — 跟大盘方向相反，不可持续</p>
+  <p><strong>4. 尾盘急拉（14:30后突然拉升）</strong> — 可能是诱多，次日低开</p>
+</div>
+
+<div class="card">
+  <div class="card-title">❌ 不适合做反T的场景</div>
+  <p><strong>1. 股价刚突破重要压力位</strong> — 可能是真突破，T飞了损失大</p>
+  <p><strong>2. 重大利好消息刚出</strong> — 利好驱动上涨，不要逆势卖</p>
+  <p><strong>3. 均线多头排列（MA5>MA20>MA60）</strong> — 强势趋势，不要反T</p>
+  <p><strong>4. 你不确定会不会跌</strong> — 不确定就不做，等确定性机会</p>
+</div>
+
+<h2>四、反T防T飞策略</h2>
+
+<div class="success">
+  ✅ <strong>防T飞三原则：</strong>  
+  <p>1. <strong>只卖T仓部分（20%）</strong>，不要全卖。卖飞了至少还有底仓</p>
+  <p>2. <strong>设好买回价格</strong>，跌到目标位立刻买回，不犹豫</p>
+  <p>3. <strong>如果卖出后30分钟没跌反涨</strong>，立刻买回！认亏手续费也要买回来</p>
+</div>
+
+<div class="summary">
+  <h3 style="color:#58a6ff;border:none;padding:0;margin:0 0 8px 0">📝 本课要点</h3>
+  <ul>
+    <li>反T = 先高抛后低吸，适合高开低走行情</li>
+    <li>反T风险大于正T，核心风险是"T飞了"</li>
+    <li>新手先练正T，熟练后再尝试反T</li>
+    <li>反T适用场景：涨停次日高开、触及压力位、逆势上涨、尾盘急拉</li>
+    <li>防T飞：只卖T仓、设好买回价、不跌反涨立刻买回</li>
+  </ul>
+</div>
+
+<div class="quiz">
+  <h3>✏️ 练习题</h3>
+  <p>1. 天邦食品昨天涨停3.27元，今天高开3.30元，你会做反T吗？怎么操作？<small style="color:#8b949e">（数据截至2026年5月18日）</small></p>
+  <p>2. 你做反T卖出2000股后，股价不跌反涨2%，你该怎么办？</p>
+  <p>3. 为什么均线多头排列时不适合做反T？</p>
+  <p>4. 正T和反T哪个更适合你目前的天邦持仓？为什么？</p>
+</div>
+
+<nav style="margin-top:30px">
+  <a href="01-正T策略.html">← 上一课</a>
+  <a href="../index.html">🏠 目录</a>
+  <a href="03-分时图看盘.html">下一课 →</a>
+</nav>
+
+</div>
+</body>
+</html>

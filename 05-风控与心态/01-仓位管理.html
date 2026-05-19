@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第15课：仓位管理 - 炒股实战教材</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.9;padding:20px}
+.container{max-width:800px;margin:0 auto}
+nav{margin-bottom:30px;display:flex;gap:10px;flex-wrap:wrap}
+nav a{color:#58a6ff;text-decoration:none;padding:6px 14px;border:1px solid #30363d;border-radius:6px;font-size:.9em;transition:all .2s}
+nav a:hover{background:#1f6feb33;border-color:#58a6ff}
+h1{font-size:1.8em;margin-bottom:6px;color:#58a6ff}
+.desc{color:#8b949e;margin-bottom:30px}
+h2{font-size:1.4em;margin:30px 0 12px;color:#f78166;border-left:4px solid #f78166;padding-left:12px}
+p{margin-bottom:12px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px 24px;margin:16px 0}
+.card-title{font-weight:bold;color:#58a6ff;margin-bottom:8px;font-size:1.05em}
+.highlight{background:#1f6feb22;border-left:3px solid #58a6ff;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.danger{background:#f8514922;border-left:3px solid #f85149;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.success{background:#3fb95022;border-left:3px solid #3fb950;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95em}
+th{background:#1f6feb33;color:#58a6ff;padding:10px 14px;text-align:left;border-bottom:2px solid #30363d}
+td{padding:10px 14px;border-bottom:1px solid #21262d}
+.quiz{background:#161b22;border:2px solid #f78166;border-radius:10px;padding:20px 24px;margin:20px 0}
+.quiz h3{color:#f78166;border:none;padding:0;margin-top:0}
+.quiz p{margin:8px 0;padding-left:20px}
+.summary{background:#1f6feb11;border:1px solid #1f6feb44;border-radius:10px;padding:20px 24px;margin:20px 0}
+.summary li{margin:6px 0}
+.svg-container{text-align:center;margin:16px 0;background:#161b22;border-radius:10px;padding:20px;border:1px solid #30363d}
+.red{color:#f85149}.green{color:#3fb950}.blue{color:#58a6ff}.yellow{color:#d29922}
+</style>
+</head>
+<body>
+<div class="container">
+
+<nav>
+  <a href="../04-基本面分析/03-消息面解读.html">← 上一课</a>
+  <a href="../index.html">🏠 目录</a>
+  <a href="02-止损纪律.html">下一课 →</a>
+</nav>
+
+<h1>⚖️ 第15课：仓位管理</h1>
+<p class="desc">仓位管理是做T的命根子。满仓一个票=赌博，合理分仓=赢面大增。这课教你怎么分配仓位，留足子弹。</p>
+
+<h2>一、仓位管理铁律</h2>
+
+<div class="svg-container">
+<svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="250" fill="#0d1117" rx="8"/>
+  <text x="350" y="30" fill="#d29922" text-anchor="middle" font-size="16" font-weight="bold">仓位管理3条铁律</text>
+
+  <rect x="30" y="50" width="200" height="170" rx="12" fill="#f8514911" stroke="#f85149" stroke-width="2"/>
+  <text x="130" y="80" fill="#f85149" text-anchor="middle" font-size="40">1</text>
+  <text x="130" y="110" fill="#f85149" text-anchor="middle" font-size="14" font-weight="bold">单票不超</text>
+  <text x="130" y="135" fill="#f85149" text-anchor="middle" font-size="28" font-weight="bold">30%</text>
+  <text x="130" y="165" fill="#8b949e" text-anchor="middle" font-size="11">不要把鸡蛋放在</text>
+  <text x="130" y="182" fill="#8b949e" text-anchor="middle" font-size="11">一个篮子里</text>
+  <text x="130" y="210" fill="#d29922" text-anchor="middle" font-size="10">天邦持仓已偏重</text>
+
+  <rect x="250" y="50" width="200" height="170" rx="12" fill="#58a6ff11" stroke="#58a6ff" stroke-width="2"/>
+  <text x="350" y="80" fill="#58a6ff" text-anchor="middle" font-size="40">2</text>
+  <text x="350" y="110" fill="#58a6ff" text-anchor="middle" font-size="14" font-weight="bold">留现金</text>
+  <text x="350" y="135" fill="#58a6ff" text-anchor="middle" font-size="28" font-weight="bold">≥20%</text>
+  <text x="350" y="165" fill="#8b949e" text-anchor="middle" font-size="11">现金=子弹</text>
+  <text x="350" y="182" fill="#8b949e" text-anchor="middle" font-size="11">没子弹怎么做T？</text>
+  <text x="350" y="210" fill="#d29922" text-anchor="middle" font-size="10">做T必须有现金</text>
+
+  <rect x="470" y="50" width="200" height="170" rx="12" fill="#3fb95011" stroke="#3fb950" stroke-width="2"/>
+  <text x="570" y="80" fill="#3fb950" text-anchor="middle" font-size="40">3</text>
+  <text x="570" y="110" fill="#3fb950" text-anchor="middle" font-size="14" font-weight="bold">分批建仓</text>
+  <text x="570" y="135" fill="#3fb950" text-anchor="middle" font-size="28" font-weight="bold">3次</text>
+  <text x="570" y="165" fill="#8b949e" text-anchor="middle" font-size="11">不要一把梭</text>
+  <text x="570" y="182" fill="#8b949e" text-anchor="middle" font-size="11">分3次买更安全</text>
+  <text x="570" y="210" fill="#d29922" text-anchor="middle" font-size="10">30%→30%→40%</text>
+</svg>
+</div>
+
+<h2>二、做T仓位分配模板</h2>
+
+<table>
+  <tr><th>仓位</th><th>比例</th><th>用途</th><th>说明</th></tr>
+  <tr><td>底仓</td><td>50-70%</td><td>长期持有</td><td>不做T，只在明确信号时调整</td></tr>
+  <tr><td>T仓</td><td>20-30%</td><td>做T用</td><td>每天可操作的部分</td></tr>
+  <tr><td>现金</td><td>10-20%</td><td>应急/机会</td><td>留着等大跌时低吸</td></tr>
+</table>
+
+<div class="card">
+  <div class="card-title">📐 天邦食品仓位调整建议</div>
+  <p>目前你满仓天邦，这不合理！建议逐步调整：</p>
+  <p><strong>第1步：</strong>下次天邦反弹到2.95-3.00元时，卖出20%仓位换现金</p>
+  <p><strong>第2步：</strong>有了现金后，用这20%做正T低吸</p>
+  <p><strong>第3步：</strong>长期维持 底仓60% + T仓20% + 现金20%</p>
+</div>
+
+<h2>三、不同行情的仓位策略</h2>
+
+<table>
+  <tr><th>行情</th><th>总仓位</th><th>底仓</th><th>T仓</th><th>现金</th></tr>
+  <tr><td class="green">上涨趋势</td><td>80%</td><td>60%</td><td>20%</td><td>20%</td></tr>
+  <tr><td class="yellow">震荡市</td><td>60%</td><td>40%</td><td>20%</td><td>40%</td></tr>
+  <tr><td class="red">下跌趋势</td><td>40%</td><td>30%</td><td>10%</td><td>60%</td></tr>
+  <tr><td class="red">暴跌/极端行情</td><td>20%</td><td>20%</td><td>0%</td><td>80%</td></tr>
+</table>
+
+<div class="danger">
+  ⚠️ <strong>天邦目前处于下跌趋势！</strong>  
+  按上面的策略，你应该只有40%仓位在天邦上，60%是现金。  
+  但你现在满仓，所以当务之急是趁反弹减仓换现金！
+</div>
+
+<div class="summary">
+  <h3 style="color:#58a6ff;border:none;padding:0;margin:0 0 8px 0">📝 本课要点</h3>
+  <ul>
+    <li>单票不超总资金30%，留现金≥20%，分3次建仓</li>
+    <li>做T仓位：底仓60% + T仓20% + 现金20%</li>
+    <li>下跌趋势要减仓，天邦当前应趁反弹减到60%仓位</li>
+    <li>没有现金=没有子弹=不能做正T</li>
+    <li>不同行情用不同仓位比例，不能一个策略走天下</li>
+  </ul>
+</div>
+
+<div class="quiz">
+  <h3>✏️ 练习题</h3>
+  <p>1. 你有10万元，全部买了天邦食品，这违反了哪条铁律？</p>
+  <p>2. 下跌趋势中应该保持多少现金比例？为什么？</p>
+  <p>3. 如果你减仓后有了2万元现金，怎么用这2万元做正T？</p>
+  <p>4. 为什么满仓不能做正T？</p>
+</div>
+
+<nav style="margin-top:30px">
+  <a href="../04-基本面分析/03-消息面解读.html">← 上一课</a>
+  <a href="../index.html">🏠 目录</a>
+  <a href="02-止损纪律.html">下一课 →</a>
+</nav>
+
+</div>
+</body>
+</html>

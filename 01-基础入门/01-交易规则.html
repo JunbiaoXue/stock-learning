@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第1课：交易规则 - 炒股实战教材</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.9;padding:20px}
+.container{max-width:800px;margin:0 auto}
+nav{margin-bottom:30px;display:flex;gap:10px;flex-wrap:wrap}
+nav a{color:#58a6ff;text-decoration:none;padding:6px 14px;border:1px solid #30363d;border-radius:6px;font-size:.9em;transition:all .2s}
+nav a:hover{background:#1f6feb33;border-color:#58a6ff}
+h1{font-size:1.8em;margin-bottom:6px;color:#58a6ff}
+.desc{color:#8b949e;margin-bottom:30px}
+h2{font-size:1.4em;margin:30px 0 12px;color:#f78166;border-left:4px solid #f78166;padding-left:12px}
+h3{font-size:1.15em;margin:20px 0 8px;color:#e6edf3}
+p{margin-bottom:12px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px 24px;margin:16px 0}
+.card-title{font-weight:bold;color:#58a6ff;margin-bottom:8px;font-size:1.05em}
+.highlight{background:#1f6feb22;border-left:3px solid #58a6ff;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.danger{background:#f8514922;border-left:3px solid #f85149;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.success{background:#3fb95022;border-left:3px solid #3fb950;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95em}
+th{background:#1f6feb33;color:#58a6ff;padding:10px 14px;text-align:left;border-bottom:2px solid #30363d}
+td{padding:10px 14px;border-bottom:1px solid #21262d}
+tr:hover{background:#161b22}
+.example{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:16px 20px;margin:12px 0;font-family:monospace}
+.quiz{background:#161b22;border:2px solid #f78166;border-radius:10px;padding:20px 24px;margin:20px 0}
+.quiz h3{color:#f78166;border:none;padding:0;margin-top:0}
+.quiz p{margin:8px 0;padding-left:20px}
+.summary{background:#1f6feb11;border:1px solid #1f6feb44;border-radius:10px;padding:20px 24px;margin:20px 0}
+.summary li{margin:6px 0}
+.svg-container{text-align:center;margin:16px 0;background:#161b22;border-radius:10px;padding:20px;border:1px solid #30363d}
+.red{color:#f85149}.green{color:#3fb950}.blue{color:#58a6ff}.yellow{color:#d29922}
+</style>
+</head>
+<body>
+<div class="container">
+
+<nav>
+  <a href="../index.html">🏠 目录</a>
+  <a href="02-看盘基础.html">下一课 →</a>
+</nav>
+
+<h1>🏛️ 第1课：交易规则</h1>
+<p class="desc">先搞懂游戏规则，才能上场打球。这课讲A股最基本的交易规则，看完你就知道"什么时候能买卖、涨跌有什么限制、手续费怎么算"。</p>
+
+<h2>一、交易时间</h2>
+<p>A股不是24小时都能交易的，每天只有4个小时：</p>
+
+<div class="svg-container">
+<svg viewBox="0 0 700 120" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="120" fill="#0d1117" rx="8"/>
+  <!-- 时间轴 -->
+  <line x1="50" y1="70" x2="650" y2="70" stroke="#30363d" stroke-width="2"/>
+  <!-- 刻度 -->
+  <line x1="50" y1="65" x2="50" y2="75" stroke="#8b949e" stroke-width="2"/>
+  <text x="50" y="90" fill="#8b949e" text-anchor="middle" font-size="11">9:15</text>
+  <line x1="130" y1="65" x2="130" y2="75" stroke="#8b949e" stroke-width="2"/>
+  <text x="130" y="90" fill="#8b949e" text-anchor="middle" font-size="11">9:25</text>
+  <line x1="210" y1="65" x2="210" y2="75" stroke="#8b949e" stroke-width="2"/>
+  <text x="210" y="90" fill="#8b949e" text-anchor="middle" font-size="11">9:30</text>
+  <line x1="370" y1="65" x2="370" y2="75" stroke="#8b949e" stroke-width="2"/>
+  <text x="370" y="90" fill="#8b949e" text-anchor="middle" font-size="11">11:30</text>
+  <line x1="430" y1="65" x2="430" y2="75" stroke="#8b949e" stroke-width="2"/>
+  <text x="430" y="90" fill="#8b949e" text-anchor="middle" font-size="11">13:00</text>
+  <line x1="590" y1="65" x2="590" y2="75" stroke="#8b949e" stroke-width="2"/>
+  <text x="590" y="90" fill="#8b949e" text-anchor="middle" font-size="11">15:00</text>
+  <!-- 集合竞价 -->
+  <rect x="50" y="40" width="80" height="20" rx="4" fill="#d2992244"/>
+  <text x="90" y="54" fill="#d29922" text-anchor="middle" font-size="10">集合竞价</text>
+  <!-- 上午交易 -->
+  <rect x="130" y="40" width="240" height="20" rx="4" fill="#3fb95044"/>
+  <text x="250" y="54" fill="#3fb950" text-anchor="middle" font-size="10">上午连续竞价</text>
+  <!-- 午休 -->
+  <rect x="370" y="40" width="60" height="20" rx="4" fill="#30363d"/>
+  <text x="400" y="54" fill="#8b949e" text-anchor="middle" font-size="10">午休</text>
+  <!-- 下午交易 -->
+  <rect x="430" y="40" width="160" height="20" rx="4" fill="#3fb95044"/>
+  <text x="510" y="54" fill="#3fb950" text-anchor="middle" font-size="10">下午连续竞价</text>
+</svg>
+</div>
+
+<div class="card">
+  <div class="card-title">⏰ 时间详解</div>
+  <p><strong>9:15-9:25 集合竞价</strong> — 所有买单卖单集中撮合，确定开盘价。9:15-9:20可以撤单，9:20-9:25不能撤单</p>
+  <p><strong>9:25-9:30 过渡期</strong> — 可下单不可撤单，不撮合成交</p>
+  <p><strong>9:30-11:30 上午交易</strong> — 连续竞价，实时成交</p>
+  <p><strong>11:30-13:00 午休</strong> — 休市，不能交易</p>
+  <p><strong>13:00-14:57 下午交易</strong> — 连续竞价</p>
+  <p><strong>14:57-15:00 收盘集合竞价</strong> — 确定收盘价</p>
+</div>
+
+<div class="highlight">
+  💡 <strong>实战技巧：</strong>开盘前9:15-9:25的集合竞价很重要，可以看出今天多空双方的力量对比。如果集合竞价高开（开盘价>昨天收盘价），说明买方强；低开则卖方强。
+</div>
+
+<h2>二、T+1规则（做T的根源）</h2>
+<p>A股实行<strong>T+1</strong>制度：今天买的股票，<strong>明天才能卖</strong>。这是做T策略存在的原因。</p>
+
+<div class="svg-container">
+<svg viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="600" height="180" fill="#0d1117" rx="8"/>
+  <!-- T+0 示意 -->
+  <text x="150" y="25" fill="#f85149" text-anchor="middle" font-size="14" font-weight="bold">❌ A股不允许 T+0</text>
+  <rect x="30" y="40" width="120" height="50" rx="8" fill="#3fb95033" stroke="#3fb950" stroke-width="1"/>
+  <text x="90" y="60" fill="#3fb950" text-anchor="middle" font-size="12">今天买入</text>
+  <text x="90" y="78" fill="#3fb950" text-anchor="middle" font-size="12">2.87元</text>
+  <line x1="150" y1="65" x2="190" y2="65" stroke="#f85149" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="170" y="58" fill="#f85149" text-anchor="middle" font-size="18">✗</text>
+  <rect x="190" y="40" width="120" height="50" rx="8" fill="#f8514933" stroke="#f85149" stroke-width="1"/>
+  <text x="250" y="60" fill="#f85149" text-anchor="middle" font-size="12">今天卖出</text>
+  <text x="250" y="78" fill="#f85149" text-anchor="middle" font-size="12">2.95元</text>
+
+  <!-- T+1 示意 -->
+  <text x="450" y="25" fill="#3fb950" text-anchor="middle" font-size="14" font-weight="bold">✅ A股规则 T+1</text>
+  <rect x="330" y="40" width="100" height="50" rx="8" fill="#3fb95033" stroke="#3fb950" stroke-width="1"/>
+  <text x="380" y="60" fill="#3fb950" text-anchor="middle" font-size="12">今天买入</text>
+  <text x="380" y="78" fill="#3fb950" text-anchor="middle" font-size="12">2.87元</text>
+  <line x1="430" y1="65" x2="470" y2="65" stroke="#3fb950" stroke-width="2"/>
+  <text x="450" y="58" fill="#8b949e" text-anchor="middle" font-size="10">隔夜</text>
+  <rect x="470" y="40" width="100" height="50" rx="8" fill="#58a6ff33" stroke="#58a6ff" stroke-width="1"/>
+  <text x="520" y="60" fill="#58a6ff" text-anchor="middle" font-size="12">明天卖出</text>
+  <text x="520" y="78" fill="#58a6ff" text-anchor="middle" font-size="12">2.95元</text>
+
+  <!-- 做T 示意 -->
+  <text x="300" y="130" fill="#d29922" text-anchor="middle" font-size="14" font-weight="bold">🔑 做T = 利用底仓变相T+0</text>
+  <rect x="80" y="140" width="130" height="30" rx="6" fill="#3fb95033" stroke="#3fb950" stroke-width="1"/>
+  <text x="145" y="160" fill="#3fb950" text-anchor="middle" font-size="11">底仓（之前买的）→ 今天卖</text>
+  <rect x="380" y="140" width="140" height="30" rx="6" fill="#58a6ff33" stroke="#58a6ff" stroke-width="1"/>
+  <text x="450" y="160" fill="#58a6ff" text-anchor="middle" font-size="11">今天买入 → 明天可以卖</text>
+  <line x1="210" y1="155" x2="380" y2="155" stroke="#d29922" stroke-width="2"/>
+  <text x="300" y="150" fill="#d29922" text-anchor="middle" font-size="10">差价就是利润</text>
+</svg>
+</div>
+
+<div class="success">
+  ✅ <strong>核心理解：</strong>做T之所以可行，是因为你已经持有底仓（之前买的股票）。今天卖掉底仓+今天再买回来=变相实现了当天买卖。卖的底仓是"旧仓位"，买的是"新仓位"，不违反T+1。
+</div>
+
+<h2>三、涨跌幅限制</h2>
+<p>A股对每天的涨跌幅度有限制，防止暴涨暴跌：</p>
+
+<table>
+  <tr><th>板块</th><th>涨跌幅限制</th><th>说明</th></tr>
+  <tr><td>主板</td><td class="red">±10%</td><td>绝大多数股票</td></tr>
+  <tr><td>ST股</td><td class="red">±5%</td><td>特别处理股，风险高</td></tr>
+  <tr><td>创业板（300开头）</td><td class="red">±20%</td><td>波动更大</td></tr>
+  <tr><td>科创板（688开头）</td><td class="red">±20%</td><td>波动更大</td></tr>
+  <tr><td>新股上市（所有板块）</td><td>前5日不设限制</td><td>第6日起按所属板块执行涨跌幅限制</td></tr>
+</table>
+
+<div class="card">
+  <div class="card-title">📐 算一算：天邦食品（主板）</div>
+  <p>天邦食品是主板股票，涨跌幅限制±10%</p>
+  <p>昨天收盘价：2.97元</p>
+  <p>今天涨停价：2.97 × 1.10 = <strong class="red">3.27元</strong></p>
+  <p>今天跌停价：2.97 × 0.90 = <strong class="green">2.67元</strong></p>
+  <p>今天实际：最低2.80，最高2.97，没触及涨跌停</p>
+</div>
+
+<h2>四、交易单位</h2>
+
+<div class="card">
+  <div class="card-title">📦 买卖规则</div>
+  <p><strong>1手 = 100股</strong>，买入最少1手</p>
+  <p>卖出时如果有零股（不足100股），可以一次性卖出</p>
+  <p>价格最小变动单位：0.01元</p>
+</div>
+
+<div class="example">
+  💡 举例：天邦食品现价2.87元<br>
+  买1手 = 100股 × 2.87 = 287元<br>
+  买10手 = 1000股 × 2.87 = 2,870元<br>
+  买100手 = 10000股 × 2.87 = 28,700元
+</div>
+
+<h2>五、交易费用</h2>
+<p>每次交易都要交钱，搞清楚费用才能算清楚赚亏：</p>
+
+<table>
+  <tr><th>费用项</th><th>费率</th><th>买入收？</th><th>卖出收？</th></tr>
+  <tr><td>券商佣金</td><td>万1~万3</td><td>✅ 收</td><td>✅ 收</td></tr>
+  <tr><td>印花税</td><td class="red">0.05%</td><td>❌ 不收</td><td class="red">✅ 收（仅卖出）</td></tr>
+  <tr><td>过户费</td><td>0.001%</td><td>✅ 收</td><td>✅ 收</td></tr>
+</table>
+
+<div class="card">
+  <div class="card-title">🧮 实战计算：以天邦食品为例</div>
+  <p>假设你买3万元天邦食品，佣金万2（0.02%）：</p>
+  <p><strong>买入费用：</strong></p>
+  <p>佣金：max(30,000 × 0.02%, 5) = max(6, 5) = 6元</p>
+  <p>过户费：30,000 × 0.001% = 0.03元</p>
+  <p>买入合计：约 <strong>6.03元</strong></p>
+  <p><strong>卖出费用（假设涨3%卖出，金额30,900元）：</strong></p>
+  <p>佣金：max(30,900 × 0.02%, 5) = max(6.18, 5) = 6.18元</p>
+  <p>印花税：30,900 × 0.05% = <strong>15.45元</strong>（最大头）</p>
+  <p>过户费：30,900 × 0.001% = 0.03元</p>
+  <p>卖出合计：约 <strong>21.66元</strong></p>
+  <p><strong>来回总费用：约27.69元</strong>，占买入金额约0.092%</p>
+</div>
+
+<div class="danger">
+  ⚠️ <strong>注意：</strong>券商佣金有最低收费5元！如果你的交易金额很小（比如只买几百块），佣金按5元收，实际费率会高很多。所以做T时，单次交易金额最好在2万元以上，才能把佣金费率打满。
+</div>
+
+<h2>六、资金规则</h2>
+
+<div class="card">
+  <div class="card-title">💵 什么时候钱能用？</div>
+  <p><strong>今天卖出股票的资金</strong> → 今天就能用来买其他股票</p>
+  <p><strong>今天卖出股票的资金</strong> → <span class="red">明天才能提现到银行卡</span></p>
+  <p><strong>今天买入的股票</strong> → <span class="red">明天才能卖出</span></p>
+</div>
+
+<div class="highlight">
+  💡 <strong>对做T的意义：</strong>你今天高抛天邦食品，卖出的钱今天就能低吸回来，不需要等第二天。这就是做T的资金基础。
+</div>
+
+<div class="summary">
+  <h3 style="color:#58a6ff;border:none;padding:0;margin:0 0 8px 0">📝 本课要点</h3>
+  <ul>
+    <li>交易时间：9:30-11:30、13:00-15:00，共4小时</li>
+    <li>T+1：今天买明天才能卖，做T靠底仓变相T+0</li>
+    <li>涨跌幅：主板±10%，创业板/科创板±20%</li>
+    <li>1手=100股，最小价格变动0.01元</li>
+    <li>费用：佣金万1-万3（最低5元）+ 印花税卖出0.05% + 过户费</li>
+    <li>卖出资金当天可买，T+1可提现</li>
+  </ul>
+</div>
+
+<div class="quiz">
+  <h3>✏️ 练习题</h3>
+  <p>1. 天邦食品昨天收盘2.97元，今天涨停价是多少？跌停价是多少？</p>
+  <p>2. 你有3万元资金，天邦食品现价2.87元，最多能买多少股？还剩多少钱？</p>
+  <p>3. 你3万买入天邦食品，佣金万2。涨3%卖出，扣除手续费实际赚多少？（提示：券商佣金最低5元）</p>
+  <p>4. 为什么做T需要底仓？没有底仓能做T吗？</p>
+</div>
+
+<nav style="margin-top:30px">
+  <a href="../index.html">🏠 目录</a>
+  <a href="02-看盘基础.html">下一课：看盘基础 →</a>
+</nav>
+
+</div>
+</body>
+</html>

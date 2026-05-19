@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第5课：均线系统 - 炒股实战教材</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.9;padding:20px}
+.container{max-width:800px;margin:0 auto}
+nav{margin-bottom:30px;display:flex;gap:10px;flex-wrap:wrap}
+nav a{color:#58a6ff;text-decoration:none;padding:6px 14px;border:1px solid #30363d;border-radius:6px;font-size:.9em;transition:all .2s}
+nav a:hover{background:#1f6feb33;border-color:#58a6ff}
+h1{font-size:1.8em;margin-bottom:6px;color:#58a6ff}
+.desc{color:#8b949e;margin-bottom:30px}
+h2{font-size:1.4em;margin:30px 0 12px;color:#f78166;border-left:4px solid #f78166;padding-left:12px}
+h3{font-size:1.15em;margin:20px 0 8px;color:#e6edf3}
+p{margin-bottom:12px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px 24px;margin:16px 0}
+.card-title{font-weight:bold;color:#58a6ff;margin-bottom:8px;font-size:1.05em}
+.highlight{background:#1f6feb22;border-left:3px solid #58a6ff;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.danger{background:#f8514922;border-left:3px solid #f85149;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.success{background:#3fb95022;border-left:3px solid #3fb950;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95em}
+th{background:#1f6feb33;color:#58a6ff;padding:10px 14px;text-align:left;border-bottom:2px solid #30363d}
+td{padding:10px 14px;border-bottom:1px solid #21262d}
+.quiz{background:#161b22;border:2px solid #f78166;border-radius:10px;padding:20px 24px;margin:20px 0}
+.quiz h3{color:#f78166;border:none;padding:0;margin-top:0}
+.quiz p{margin:8px 0;padding-left:20px}
+.summary{background:#1f6feb11;border:1px solid #1f6feb44;border-radius:10px;padding:20px 24px;margin:20px 0}
+.summary li{margin:6px 0}
+.svg-container{text-align:center;margin:16px 0;background:#161b22;border-radius:10px;padding:20px;border:1px solid #30363d}
+.red{color:#f85149}.green{color:#3fb950}.blue{color:#58a6ff}.yellow{color:#d29922}
+</style>
+</head>
+<body>
+<div class="container">
+
+<nav>
+  <a href="01-K线形态.html">← 上一课</a>
+  <a href="../index.html">🏠 目录</a>
+  <a href="03-常用指标.html">下一课 →</a>
+</nav>
+
+<h1>📈 第5课：均线系统</h1>
+<p class="desc">均线是K线的"平均成绩"，能帮你看出趋势方向。均线往上走=上涨趋势，往下走=下跌趋势，简单好用。</p>
+
+<h2>一、均线是什么</h2>
+<p><strong>均线（MA）</strong> = 过去N天收盘价的平均值连成的线</p>
+
+<div class="svg-container">
+<svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="200" fill="#0d1117" rx="8"/>
+  <text x="350" y="25" fill="#d29922" text-anchor="middle" font-size="14" font-weight="bold">MA5 计算示例</text>
+  <!-- 表格 -->
+  <text x="80" y="55" fill="#8b949e" font-size="12">日期</text>
+  <text x="200" y="55" fill="#8b949e" font-size="12">收盘价</text>
+  <text x="350" y="55" fill="#8b949e" font-size="12">MA5</text>
+  <line x1="40" y1="62" x2="660" y2="62" stroke="#30363d" stroke-width="1"/>
+  <text x="80" y="82" fill="#e6edf3" font-size="12">5/12</text><text x="200" y="82" fill="#e6edf3" font-size="12">2.85</text><text x="350" y="82" fill="#8b949e" font-size="12">—（天数不够）</text>
+  <text x="80" y="102" fill="#e6edf3" font-size="12">5/13</text><text x="200" y="102" fill="#e6edf3" font-size="12">2.90</text><text x="350" y="102" fill="#8b949e" font-size="12">—（天数不够）</text>
+  <text x="80" y="122" fill="#e6edf3" font-size="12">5/14</text><text x="200" y="122" fill="#e6edf3" font-size="12">2.97</text><text x="350" y="122" fill="#8b949e" font-size="12">—（天数不够）</text>
+  <text x="80" y="142" fill="#e6edf3" font-size="12">5/15</text><text x="200" y="142" fill="#e6edf3" font-size="12">2.95</text><text x="350" y="142" fill="#8b949e" font-size="12">—（天数不够）</text>
+  <text x="80" y="162" fill="#d29922" font-size="12" font-weight="bold">5/18</text><text x="200" y="162" fill="#d29922" font-size="12" font-weight="bold">2.87</text>
+  <text x="350" y="162" fill="#58a6ff" font-size="12" font-weight="bold">(2.85+2.90+2.97+2.95+2.87)/5 = 2.908</text>
+  <text x="350" y="190" fill="#8b949e" font-size="11">每天算一个MA5值，连起来就是MA5均线</text>
+</svg>
+</div>
+
+<h2>二、三条最重要的均线</h2>
+
+<div class="svg-container">
+<svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="350" fill="#0d1117" rx="8"/>
+  <text x="350" y="25" fill="#d29922" text-anchor="middle" font-size="16" font-weight="bold">三条均线，三个角色</text>
+
+  <!-- MA5 -->
+  <rect x="40" y="50" width="620" height="80" rx="8" fill="#f8514911" stroke="#f85149" stroke-width="1"/>
+  <text x="80" y="80" fill="#f85149" font-size="16" font-weight="bold">MA5</text>
+  <text x="80" y="105" fill="#e6edf3" font-size="13">5日均线 = 过去5天平均价</text>
+  <text x="400" y="80" fill="#f85149" font-size="13">⏩ 反应最快，像"油门"</text>
+  <text x="400" y="105" fill="#8b949e" font-size="12">短线做T看这条</text>
+
+  <!-- MA20 -->
+  <rect x="40" y="145" width="620" height="80" rx="8" fill="#58a6ff11" stroke="#58a6ff" stroke-width="1"/>
+  <text x="80" y="175" fill="#58a6ff" font-size="16" font-weight="bold">MA20</text>
+  <text x="80" y="200" fill="#e6edf3" font-size="13">20日均线 = 过去20天平均价</text>
+  <text x="400" y="175" fill="#58a6ff" font-size="13">⏩ 反应适中，像"方向盘"</text>
+  <text x="400" y="200" fill="#8b949e" font-size="12">波段趋势看这条</text>
+
+  <!-- MA60 -->
+  <rect x="40" y="240" width="620" height="80" rx="8" fill="#3fb95011" stroke="#3fb950" stroke-width="1"/>
+  <text x="80" y="270" fill="#3fb950" font-size="16" font-weight="bold">MA60</text>
+  <text x="80" y="295" fill="#e6edf3" font-size="13">60日均线 = 过去60天平均价</text>
+  <text x="400" y="270" fill="#3fb950" font-size="13">⏩ 反应最慢，像"刹车"</text>
+  <text x="400" y="295" fill="#8b949e" font-size="12">大趋势方向看这条</text>
+</svg>
+</div>
+
+<h2>三、均线判断趋势</h2>
+
+<div class="svg-container">
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="280" fill="#0d1117" rx="8"/>
+
+  <!-- 上涨趋势 -->
+  <text x="175" y="25" fill="#3fb950" text-anchor="middle" font-size="14" font-weight="bold">上涨趋势</text>
+  <line x1="50" y1="150" x2="300" y2="60" stroke="#3fb950" stroke-width="3"/>
+  <text x="175" y="50" fill="#3fb950" text-anchor="middle" font-size="11">均线向上走 ↗</text>
+  <text x="175" y="180" fill="#3fb950" text-anchor="middle" font-size="12">股价在均线上方</text>
+  <text x="175" y="200" fill="#3fb950" text-anchor="middle" font-size="12">MA5 > MA20 > MA60</text>
+  <text x="175" y="225" fill="#8b949e" text-anchor="middle" font-size="11">做T：逢低买，均线附近是买点</text>
+  <rect x="50" y="170" width="250" height="1" fill="#3fb95066"/>
+  <rect x="50" y="200" width="250" height="1" fill="#3fb95033"/>
+
+  <!-- 下跌趋势 -->
+  <text x="525" y="25" fill="#f85149" text-anchor="middle" font-size="14" font-weight="bold">下跌趋势</text>
+  <line x1="400" y1="60" x2="650" y2="150" stroke="#f85149" stroke-width="3"/>
+  <text x="525" y="50" fill="#f85149" text-anchor="middle" font-size="11">均线向下走 ↘</text>
+  <text x="525" y="180" fill="#f85149" text-anchor="middle" font-size="12">股价在均线下方</text>
+  <text x="525" y="200" fill="#f85149" text-anchor="middle" font-size="12">MA5 < MA20 < MA60</text>
+  <text x="525" y="225" fill="#8b949e" text-anchor="middle" font-size="11">做T：逢高卖，均线附近是卖点</text>
+  <rect x="400" y="170" width="250" height="1" fill="#f8514966"/>
+  <rect x="400" y="200" width="250" height="1" fill="#f8514933"/>
+
+  <!-- 底部总结 -->
+  <rect x="100" y="245" width="500" height="30" rx="6" fill="#d2992233"/>
+  <text x="350" y="265" fill="#d29922" text-anchor="middle" font-size="13" font-weight="bold">核心：顺趋势操作，上涨做多，下跌少动</text>
+</svg>
+</div>
+
+<h2>四、金叉与死叉（重要！）</h2>
+
+<div class="svg-container">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="300" fill="#0d1117" rx="8"/>
+
+  <!-- 金叉 -->
+  <text x="175" y="25" fill="#3fb950" text-anchor="middle" font-size="16" font-weight="bold">金叉 🟢 看涨</text>
+  <text x="175" y="50" fill="#8b949e" text-anchor="middle" font-size="12">短线上穿长线</text>
+  <!-- MA20 -->
+  <path d="M50,150 Q175,130 300,120" stroke="#58a6ff" stroke-width="3" fill="none"/>
+  <!-- MA5 从下穿上 -->
+  <path d="M50,180 Q120,160 150,135 Q200,100 300,90" stroke="#f85149" stroke-width="3" fill="none"/>
+  <!-- 交叉点 -->
+  <circle cx="145" cy="138" r="8" fill="none" stroke="#3fb950" stroke-width="2"/>
+  <text x="145" y="170" fill="#3fb950" text-anchor="middle" font-size="11" font-weight="bold">交叉点</text>
+  <text x="175" y="220" fill="#3fb950" text-anchor="middle" font-size="13">MA5 从下方穿过 MA20</text>
+  <text x="175" y="245" fill="#3fb950" text-anchor="middle" font-size="13">= 短期加速上涨</text>
+  <text x="175" y="275" fill="#8b949e" text-anchor="middle" font-size="11">买点信号，可加仓</text>
+
+  <!-- 死叉 -->
+  <text x="525" y="25" fill="#f85149" text-anchor="middle" font-size="16" font-weight="bold">死叉 🔴 看跌</text>
+  <text x="525" y="50" fill="#8b949e" text-anchor="middle" font-size="12">短线下穿长线</text>
+  <!-- MA20 -->
+  <path d="M400,120 Q525,140 650,150" stroke="#58a6ff" stroke-width="3" fill="none"/>
+  <!-- MA5 从上穿下 -->
+  <path d="M400,90 Q500,100 530,135 Q580,170 650,180" stroke="#f85149" stroke-width="3" fill="none"/>
+  <!-- 交叉点 -->
+  <circle cx="535" cy="138" r="8" fill="none" stroke="#f85149" stroke-width="2"/>
+  <text x="535" y="170" fill="#f85149" text-anchor="middle" font-size="11" font-weight="bold">交叉点</text>
+  <text x="525" y="220" fill="#f85149" text-anchor="middle" font-size="13">MA5 从上方穿过 MA20</text>
+  <text x="525" y="245" fill="#f85149" text-anchor="middle" font-size="13">= 短期加速下跌</text>
+  <text x="525" y="275" fill="#8b949e" text-anchor="middle" font-size="11">卖点信号，可减仓</text>
+</svg>
+</div>
+
+<div class="danger">
+  ⚠️ <strong>均线是滞后指标！</strong>  
+  均线是根据过去的数据算的，所以它"慢半拍"。金叉出现时股价已经涨了一段，死叉出现时已经跌了一段。  
+  <strong>对策：</strong>不要等金叉完全确认才买，可以提前半步，但要配合其他指标一起看。
+</div>
+
+<h2>五、均线支撑与压力</h2>
+<p>均线不仅是趋势线，还是<strong>支撑线</strong>和<strong>压力线</strong>：</p>
+
+<div class="card">
+  <div class="card-title">📐 上涨趋势中：均线是支撑</div>
+  <p>股价回调到均线附近，往往会被"托住"再涨上去</p>
+  <p><strong>操作：</strong>股价跌到MA5或MA20附近=低吸机会</p>
+</div>
+
+<div class="card">
+  <div class="card-title">📐 下跌趋势中：均线是压力</div>
+  <p>股价反弹到均线附近，往往会被"压住"再跌下去</p>
+  <p><strong>操作：</strong>股价涨到MA5或MA20附近=高抛机会</p>
+</div>
+
+<div class="highlight">
+  💡 <strong>天邦食品当前情况（数据截至2026年5月18日）：</strong>  
+  股价2.87元，处于下跌趋势（MA5 < MA20）。  
+  均线现在是"压力"，股价反弹到均线附近就是高抛做T的机会。  
+  要等均线走平或拐头向上，才说明趋势可能反转。
+</div>
+
+<div class="summary">
+  <h3 style="color:#58a6ff;border:none;padding:0;margin:0 0 8px 0">📝 本课要点</h3>
+  <ul>
+    <li>MA5=短线，MA20=波段，MA60=大趋势</li>
+    <li>均线向上+股价在上方=上涨趋势，做多</li>
+    <li>均线向下+股价在下方=下跌趋势，少动或做空</li>
+    <li>金叉=短线上穿长线=看涨信号</li>
+    <li>死叉=短线下穿长线=看跌信号</li>
+    <li>上涨时均线是支撑（低吸点），下跌时均线是压力（高抛点）</li>
+    <li>均线滞后，别等完全确认才操作</li>
+  </ul>
+</div>
+
+<div class="quiz">
+  <h3>✏️ 练习题</h3>
+  <p>1. 如果MA5在2.90元，MA20在2.95元，MA60在3.05元，这是什么排列？说明什么趋势？</p>
+  <p>2. 天邦食品目前MA5向下穿过MA20形成死叉，你持有底仓应该怎么操作？</p>
+  <p>3. 为什么说均线是"滞后指标"？这对做T有什么影响？</p>
+  <p>4. 如果股价从2.80元反弹到2.95元，MA20在2.92元，你会怎么做T？</p>
+</div>
+
+<nav style="margin-top:30px">
+  <a href="01-K线形态.html">← 上一课</a>
+  <a href="../index.html">🏠 目录</a>
+  <a href="03-常用指标.html">下一课 →</a>
+</nav>
+
+</div>
+</body>
+</html>

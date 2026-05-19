@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第8课：正T策略 - 炒股实战教材</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.9;padding:20px}
+.container{max-width:800px;margin:0 auto}
+nav{margin-bottom:30px;display:flex;gap:10px;flex-wrap:wrap}
+nav a{color:#58a6ff;text-decoration:none;padding:6px 14px;border:1px solid #30363d;border-radius:6px;font-size:.9em;transition:all .2s}
+nav a:hover{background:#1f6feb33;border-color:#58a6ff}
+h1{font-size:1.8em;margin-bottom:6px;color:#58a6ff}
+.desc{color:#8b949e;margin-bottom:30px}
+h2{font-size:1.4em;margin:30px 0 12px;color:#f78166;border-left:4px solid #f78166;padding-left:12px}
+p{margin-bottom:12px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px 24px;margin:16px 0}
+.card-title{font-weight:bold;color:#58a6ff;margin-bottom:8px;font-size:1.05em}
+.highlight{background:#1f6feb22;border-left:3px solid #58a6ff;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.danger{background:#f8514922;border-left:3px solid #f85149;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+.success{background:#3fb95022;border-left:3px solid #3fb950;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95em}
+th{background:#1f6feb33;color:#58a6ff;padding:10px 14px;text-align:left;border-bottom:2px solid #30363d}
+td{padding:10px 14px;border-bottom:1px solid #21262d}
+.quiz{background:#161b22;border:2px solid #f78166;border-radius:10px;padding:20px 24px;margin:20px 0}
+.quiz h3{color:#f78166;border:none;padding:0;margin-top:0}
+.quiz p{margin:8px 0;padding-left:20px}
+.summary{background:#1f6feb11;border:1px solid #1f6feb44;border-radius:10px;padding:20px 24px;margin:20px 0}
+.summary li{margin:6px 0}
+.svg-container{text-align:center;margin:16px 0;background:#161b22;border-radius:10px;padding:20px;border:1px solid #30363d}
+.red{color:#f85149}.green{color:#3fb950}.blue{color:#58a6ff}.yellow{color:#d29922}
+</style>
+</head>
+<body>
+<div class="container">
+
+<nav>
+  <a href="../02-技术分析/04-量价关系.html">← 上一课</a>
+  <a href="../index.html">🏠 目录</a>
+  <a href="02-反T策略.html">下一课 →</a>
+</nav>
+
+<h1>🟢 第8课：正T策略（先买后卖）</h1>
+<p class="desc">正T是做T最常用的方式：股价低的时候买入，涨上去后卖出底仓，赚中间差价。简单说就是"低吸高抛"。</p>
+
+<h2>一、正T操作流程</h2>
+
+<div class="svg-container">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="300" fill="#0d1117" rx="8"/>
+  <text x="350" y="30" fill="#3fb950" text-anchor="middle" font-size="18" font-weight="bold">正T完整流程</text>
+
+  <!-- Step 1 -->
+  <rect x="30" y="55" width="200" height="80" rx="10" fill="#3fb95022" stroke="#3fb950" stroke-width="2"/>
+  <text x="130" y="80" fill="#3fb950" text-anchor="middle" font-size="14" font-weight="bold">Step 1 低吸</text>
+  <text x="130" y="100" fill="#e6edf3" text-anchor="middle" font-size="12">股价跌到支撑位</text>
+  <text x="130" y="120" fill="#3fb950" text-anchor="middle" font-size="12">用现金买入T仓</text>
+
+  <text x="250" y="95" fill="#58a6ff" font-size="24">→</text>
+
+  <!-- Step 2 -->
+  <rect x="270" y="55" width="160" height="80" rx="10" fill="#58a6ff22" stroke="#58a6ff" stroke-width="2"/>
+  <text x="350" y="80" fill="#58a6ff" text-anchor="middle" font-size="14" font-weight="bold">Step 2 等涨</text>
+  <text x="350" y="100" fill="#e6edf3" text-anchor="middle" font-size="12">股价反弹上涨</text>
+  <text x="350" y="120" fill="#58a6ff" text-anchor="middle" font-size="12">耐心等差价</text>
+
+  <text x="450" y="95" fill="#f78166" font-size="24">→</text>
+
+  <!-- Step 3 -->
+  <rect x="470" y="55" width="200" height="80" rx="10" fill="#f7816622" stroke="#f78166" stroke-width="2"/>
+  <text x="570" y="80" fill="#f78166" text-anchor="middle" font-size="14" font-weight="bold">Step 3 高抛</text>
+  <text x="570" y="100" fill="#e6edf3" text-anchor="middle" font-size="12">股价涨到压力位</text>
+  <text x="570" y="120" fill="#f78166" text-anchor="middle" font-size="12">卖出等量底仓</text>
+
+  <!-- 结果 -->
+  <rect x="150" y="160" width="400" height="50" rx="10" fill="#3fb95033" stroke="#3fb950" stroke-width="2"/>
+  <text x="350" y="190" fill="#3fb950" text-anchor="middle" font-size="16" font-weight="bold">结果：成本降低，股数不变 💰</text>
+
+  <!-- 关键说明 -->
+  <rect x="50" y="230" width="600" height="55" rx="8" fill="#d2992233"/>
+  <text x="350" y="255" fill="#d29922" text-anchor="middle" font-size="13" font-weight="bold">⚠️ 关键：卖出的是底仓（旧仓位），不是刚买的T仓</text>
+  <text x="350" y="275" fill="#8b949e" text-anchor="middle" font-size="11">刚买的T仓今天不能卖（T+1），但底仓是之前买的，今天可以卖</text>
+</svg>
+</div>
+
+<h2>二、正T实战案例（天邦食品）</h2>
+
+<div class="card">
+  <div class="card-title">📐 场景：你持有天邦10000股，成本3.0083元</div>
+  <p>底仓8000股 + T仓2000股</p>
+  <p>今天天邦低开，开盘2.96元，最低到2.80元，最高2.97元</p>
+  <p><small style="color:#8b949e">（数据截至2026年5月18日）</small></p>
+</div>
+
+<div class="svg-container">
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="700" height="280" fill="#0d1117" rx="8"/>
+  <text x="350" y="25" fill="#d29922" text-anchor="middle" font-size="16" font-weight="bold">5月18日天邦正T操作示意</text>
+  <text x="350" y="40" fill="#8b949e" text-anchor="middle" font-size="10">（以下为基于当日行情的模拟操作）</text>
+
+  <!-- 分时走势 -->
+  <line x1="60" y1="50" x2="60" y2="220" stroke="#30363d" stroke-width="1"/>
+  <line x1="60" y1="220" x2="650" y2="220" stroke="#30363d" stroke-width="1"/>
+  <text x="45" y="65" fill="#8b949e" font-size="9">3.0</text>
+  <text x="45" y="110" fill="#8b949e" font-size="9">2.9</text>
+  <text x="45" y="155" fill="#8b949e" font-size="9">2.8</text>
+  <text x="45" y="200" fill="#8b949e" font-size="9">2.7</text>
+
+  <!-- 分时线 -->
+  <path d="M60,105 L100,108 L140,120 L180,150 L220,170 L250,185 L280,195 L300,190 L330,175 L360,165 L390,158 L420,152 L450,155 L480,160 L510,155 L540,148 L570,145 L600,148 L630,150" stroke="#f85149" stroke-width="2" fill="none"/>
+
+  <!-- 买入标记 -->
+  <circle cx="280" cy="195" r="8" fill="#3fb950" opacity="0.8"/>
+  <text x="280" y="195" fill="#fff" text-anchor="middle" font-size="10" font-weight="bold">买</text>
+  <line x1="280" y1="195" x2="310" y2="215" stroke="#3fb950" stroke-width="1"/>
+  <text x="310" y="225" fill="#3fb950" font-size="10">2.83元低吸2000股</text>
+
+  <!-- 卖出标记 -->
+  <circle cx="570" cy="145" r="8" fill="#f85149" opacity="0.8"/>
+  <text x="570" y="145" fill="#fff" text-anchor="middle" font-size="10" font-weight="bold">卖</text>
+  <line x1="570" y1="145" x2="600" y2="130" stroke="#f85149" stroke-width="1"/>
+  <text x="600" y="125" fill="#f85149" font-size="10">2.92元高抛2000股</text>
+
+  <!-- 时间轴 -->
+  <text x="60" y="245" fill="#8b949e" font-size="9">9:30</text>
+  <text x="200" y="245" fill="#8b949e" font-size="9">10:30</text>
+  <text x="350" y="245" fill="#8b949e" font-size="9">13:00</text>
+  <text x="500" y="245" fill="#8b949e" font-size="9">14:00</text>
+  <text x="630" y="245" fill="#8b949e" font-size="9">15:00</text>
+
+  <!-- 收益 -->
+  <rect x="150" y="255" width="400" height="20" rx="4" fill="#3fb95033"/>
+  <text x="350" y="270" fill="#3fb950" text-anchor="middle" font-size="12" font-weight="bold">赚 0.09元/股 × 2000股 = 180元 💰</text>
+</svg>
+</div>
+
+<h2>三、正T降成本计算</h2>
+
+<div class="card">
+  <div class="card-title">🧮 做T后你的成本变化</div>
+  <p>做T前：成本 3.0083元，持有10000股</p>
+  <p>做T操作：2.83买2000股，2.92卖2000股底仓（以下为基于当日行情的模拟操作）</p>
+  <p>做T利润：(2.92 - 2.83) × 2000 - 手续费 ≈ <strong class="green">170元</strong></p>
+  <p>新成本 = (3.0083 × 10000 - 170) ÷ 10000 = <strong>2.9913元</strong></p>
+  <p>一次正T降成本：3.0083 - 2.9913 = <strong class="green">0.017元</strong></p>
+</div>
+
+<div class="highlight">
+  💡 <strong>坚持做T的效果：</strong>  
+  如果每周做1-2次正T，每次降成本0.02-0.03元  
+  一个月下来可降 0.08-0.24元  
+  你的成本从3.0083降到2.90以下大约需要5-8次成功做T  
+  解套不是一天的事，要有耐心
+</div>
+
+<h2>四、正T的5个纪律</h2>
+
+<div class="danger">
+  <p><strong>1. 低吸点要提前设好</strong></p>
+  <p>不要等跌到最低点才买，到了支撑位就买，买不到最低没关系</p>
+</div>
+
+<div class="danger">
+  <p><strong>2. 高抛点也要提前设好</strong></p>
+  <p>涨到压力位就卖，别贪心等更高。做T赚1-3%就够了</p>
+</div>
+
+<div class="danger">
+  <p><strong>3. T仓比例不超过20%</strong></p>
+  <p>用总仓位的20%做T，剩下的底仓不动</p>
+</div>
+
+<div class="danger">
+  <p><strong>4. 当天没机会就不做</strong></p>
+  <p>如果股价窄幅震荡，没有2%以上的波动，不做T。手续费都不够</p>
+</div>
+
+<div class="danger">
+  <p><strong>5. 买完跌了不补仓</strong></p>
+  <p>正T买完如果继续跌，不要加仓！等明天再说。加仓是你最大的敌人</p>
+</div>
+
+<div class="summary">
+  <h3 style="color:#58a6ff;border:none;padding:0;margin:0 0 8px 0">📝 本课要点</h3>
+  <ul>
+    <li>正T = 先低吸后高抛，赚差价降成本</li>
+    <li>卖出的是底仓（旧仓位），不是刚买的T仓</li>
+    <li>每次正T目标1-3%差价，不要贪</li>
+    <li>T仓不超过总仓位20%</li>
+    <li>5个纪律：设好买卖点、控制比例、没机会不做、跌了不加仓</li>
+    <li>坚持做T，5-8次可降成本0.1元以上</li>
+  </ul>
+</div>
+
+<div class="quiz">
+  <h3>✏️ 练习题</h3>
+  <p>1. 你持有天邦10000股，成本3.0083元。今天2.80元买入2000股做正T，2.95元卖出2000股底仓。计算做T后的新成本。</p>
+  <p>2. 如果正T买在2.85元，但股价继续跌到2.75元，你应该怎么处理？</p>
+  <p>3. 天邦今天振幅5.72%，适合做正T吗？如果振幅只有1%呢？</p>
+  <p>4. 为什么说"加仓是做T最大的敌人"？</p>
+</div>
+
+<nav style="margin-top:30px">
+  <a href="../02-技术分析/04-量价关系.html">← 上一课</a>
+  <a href="../index.html">🏠 目录</a>
+  <a href="02-反T策略.html">下一课 →</a>
+</nav>
+
+</div>
+</body>
+</html>
